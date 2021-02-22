@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 6
+Sheet 5 6
 Title "SuperPower-uC"
 Date "2020-09-20"
 Rev "0.1"
@@ -233,34 +233,6 @@ Wire Notes Line
 	3350 4000 6700 4000
 Wire Notes Line
 	6700 1850 6700 4000
-Wire Wire Line
-	5950 3250 5900 3250
-Wire Wire Line
-	5900 3350 5950 3350
-Wire Wire Line
-	5950 3450 5900 3450
-Wire Wire Line
-	5900 3550 5950 3550
-Text GLabel 5950 3250 2    50   Input ~ 0
-exp7
-Text GLabel 5950 3350 2    50   Input ~ 0
-exp6
-Text GLabel 5950 3450 2    50   Input ~ 0
-exp5
-Text GLabel 5950 3550 2    50   Input ~ 0
-exp4
-Wire Wire Line
-	4650 3450 5100 3450
-Wire Wire Line
-	4650 3350 5100 3350
-Wire Wire Line
-	4650 3250 5100 3250
-Text GLabel 4650 3250 0    50   Input ~ 0
-3v3_EN
-Text GLabel 4650 3350 0    50   Input ~ 0
-5V_EN
-Text GLabel 4650 3450 0    50   Input ~ 0
-CH_DIS
 Text Label 4800 3250 0    50   ~ 0
 3.3_EN
 Text Label 4800 3350 0    50   ~ 0
@@ -341,4 +313,14 @@ Text Label 1750 1300 2    50   ~ 0
 VBAT
 Text Label 6450 4750 2    50   ~ 0
 3v3_I2C
+Wire Wire Line
+	4800 3250 5100 3250
+Wire Wire Line
+	5100 3350 4800 3350
+Wire Wire Line
+	4800 3450 5100 3450
+NoConn ~ 5900 3550
+NoConn ~ 5900 3450
+NoConn ~ 5900 3350
+NoConn ~ 5900 3250
 $EndSCHEMATC

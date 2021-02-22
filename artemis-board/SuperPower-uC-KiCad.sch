@@ -138,9 +138,9 @@ $EndComp
 Wire Wire Line
 	8600 3850 8600 3900
 Text Label 8900 3350 0    50   ~ 0
-VBUS_1
+VBUS
 Text Label 8900 3250 0    50   ~ 0
-D1-
+D-
 Wire Wire Line
 	8900 3350 9300 3350
 Wire Wire Line
@@ -148,11 +148,11 @@ Wire Wire Line
 Wire Wire Line
 	8900 3150 9300 3150
 Text Label 8900 3150 0    50   ~ 0
-D1+
+D+
 Text Label 8900 2850 0    50   ~ 0
-SCL_1
+SCL
 Text Label 8900 2950 0    50   ~ 0
-SDA_1
+SDA
 Wire Wire Line
 	8900 2950 9300 2950
 Wire Wire Line
@@ -160,9 +160,9 @@ Wire Wire Line
 Wire Wire Line
 	4300 2500 4800 2500
 Text Label 6300 4100 0    50   ~ 0
-SCL_1
+SCL
 Text Label 6300 4200 0    50   ~ 0
-SDA_1
+SDA
 Wire Wire Line
 	4600 3100 4600 4450
 Wire Wire Line
@@ -170,9 +170,9 @@ Wire Wire Line
 Wire Wire Line
 	6150 4200 6300 4200
 Text Label 4400 2850 0    50   ~ 0
-SCL_1
+SCL
 Text Label 4400 2950 0    50   ~ 0
-SDA_1
+SDA
 Wire Wire Line
 	4400 2850 4300 2850
 Wire Wire Line
@@ -190,7 +190,7 @@ Text Label 8900 3550 0    50   ~ 0
 Wire Wire Line
 	8900 3550 9300 3550
 Text Label 4200 5000 0    50   ~ 0
-VBUS_1
+VBUS
 Wire Wire Line
 	4200 5000 4100 5000
 Wire Wire Line
@@ -198,25 +198,17 @@ Wire Wire Line
 Wire Wire Line
 	4200 4750 4100 4750
 Text Label 8900 3750 0    50   ~ 0
-3v3_MCU_1
+3v3_MCU
 Wire Wire Line
 	8900 3750 9300 3750
 Text Label 6300 2550 0    50   ~ 0
-3v3_MCU_1
+3v3_MCU
 Wire Wire Line
 	6300 2550 6150 2550
-Text GLabel 8900 3650 0    50   Input ~ 0
-3v3_EN
-Text GLabel 8900 3450 0    50   Input ~ 0
-5V_EN
-Wire Wire Line
-	9300 3450 8900 3450
-Wire Wire Line
-	9300 3650 8900 3650
 Text Label 4200 4750 0    50   ~ 0
-D1+
+D+
 Text Label 4200 4850 0    50   ~ 0
-D1-
+D-
 Wire Wire Line
 	8600 3050 8600 3100
 Wire Wire Line
@@ -238,7 +230,7 @@ U 1 1 60096DD5
 P 9500 3450
 F 0 "J8" H 9550 3500 50  0000 L CNN
 F 1 "regulator board" H 9550 3400 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x13_P2.54mm_Vertical" H 9500 3450 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x13_P2.54mm_Vertical" H 9500 3450 50  0001 C CNN
 F 3 "~" H 9500 3450 50  0001 C CNN
 	1    9500 3450
 	1    0    0    -1  
@@ -311,4 +303,6 @@ F 3 "~" H 7300 5750 50  0001 C CNN
 	1    7300 5750
 	1    0    0    -1  
 $EndComp
+NoConn ~ 9300 3650
+NoConn ~ 9300 3450
 $EndSCHEMATC
