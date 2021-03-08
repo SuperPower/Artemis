@@ -301,16 +301,8 @@ Wire Notes Line
 	1850 600  1850 2450
 Wire Notes Line
 	550  600  550  2450
-Text GLabel 3750 2900 0    50   Input ~ 0
-INT_IO
 Text Notes 3400 2150 0    50   ~ 0
 If not populated add pulldowns to the 3v3 and 5v EN pins
-Text HLabel 1350 1300 0    50   Input ~ 0
-VBAT
-Wire Wire Line
-	1350 1300 1750 1300
-Text Label 1750 1300 2    50   ~ 0
-VBAT
 Text Label 6450 4750 2    50   ~ 0
 3v3_I2C
 Wire Wire Line

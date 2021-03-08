@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 6
+Sheet 6 6
 Title "SuperPower-uC"
 Date "2020-09-20"
 Rev "0.1"
@@ -227,4 +227,6 @@ Wire Wire Line
 	3250 4550 3550 4550
 Wire Wire Line
 	4400 4550 4700 4550
+NoConn ~ 4400 4650
+NoConn ~ 3550 4650
 $EndSCHEMATC
