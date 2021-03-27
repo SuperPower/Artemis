@@ -242,32 +242,21 @@ CH_DIS
 $Comp
 L Device:R R4
 U 1 1 5FC6F3D4
-P 4750 2900
-F 0 "R4" H 4650 3000 50  0000 C CNN
-F 1 "180k" H 4600 2900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4680 2900 50  0001 C CNN
-F 3 "~" H 4750 2900 50  0001 C CNN
-F 4 "C22827" H 4750 2900 50  0001 C CNN "LCSC"
-	1    4750 2900
+P 4550 2900
+F 0 "R4" H 4450 3000 50  0000 C CNN
+F 1 "180k" H 4400 2900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4480 2900 50  0001 C CNN
+F 3 "~" H 4550 2900 50  0001 C CNN
+F 4 "C22827" H 4550 2900 50  0001 C CNN "LCSC"
+	1    4550 2900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4750 3050 5100 3050
-Wire Wire Line
-	4750 2750 5050 2750
-Wire Wire Line
-	5050 2750 5050 2850
-Text Label 5050 2750 2    50   ~ 0
+	5050 2600 5050 2850
+Text Label 5050 2600 2    50   ~ 0
 3v3_I2C
 Wire Wire Line
 	4250 3150 5100 3150
-Wire Wire Line
-	5100 2950 5050 2950
-Wire Wire Line
-	5050 2950 5050 2850
-Connection ~ 5050 2850
-Text Label 6450 2850 2    50   ~ 0
-3v3_I2C
 $Comp
 L Device:C C22
 U 1 1 5FC9C8EC
@@ -315,4 +304,23 @@ NoConn ~ 5900 3550
 NoConn ~ 5900 3450
 NoConn ~ 5900 3350
 NoConn ~ 5900 3250
+Wire Wire Line
+	4550 3050 5100 3050
+Text HLabel 1350 1700 0    50   Input ~ 0
+VBat
+Text Label 1750 1700 2    50   ~ 0
+VBat
+Wire Wire Line
+	1750 1700 1350 1700
+Text Label 4550 2700 2    50   ~ 0
+VBat
+Wire Wire Line
+	4550 2750 4550 2700
+Text Label 6450 2850 2    50   ~ 0
+VBat
+Wire Wire Line
+	5100 2950 5050 2950
+Wire Wire Line
+	5050 2950 5050 2850
+Connection ~ 5050 2850
 $EndSCHEMATC
