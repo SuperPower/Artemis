@@ -6,8 +6,6 @@ superpower board = superpower();
 void setup() {
   Serial.begin(115200);
   int i = board.init();
-  board.config_EXP(5, 0);     //sets expander pin 5 as input for expander interrupts
-  board.set_EXP(4, 1);        //sets expander pin 4 to high
   if(i == 0) {
     board.set_time(0, 5, 14, 4, 30, 12, 20);
     Serial.println("configuring");
@@ -67,4 +65,3 @@ void loop() {
     delay(10000);
   }
 }
-
