@@ -63,15 +63,15 @@ String superpower::get_timestamp() {
 }
 
 byte superpower::get_second() {
-	return bcdToDec(wire_RX_8(RTC_addr, RTC_VL_SECOND & B01111111));
+	return bcdToDec(wire_RX_8(RTC_addr, RTC_VL_SECOND) & B01111111);
 }
 
 byte superpower::get_minute() {
-	return bcdToDec(wire_RX_8(RTC_addr, RTC_MINUTE & B01111111));
+	return bcdToDec(wire_RX_8(RTC_addr, RTC_MINUTE) & B01111111);
 }
 
 byte superpower::get_hour() {
-	return bcdToDec(wire_RX_8(RTC_addr, RTC_HOUR & B00111111));
+	return bcdToDec(wire_RX_8(RTC_addr, RTC_HOUR) & B00111111);
 }
 
 byte superpower::get_weekday() {
@@ -79,7 +79,7 @@ byte superpower::get_weekday() {
 }
 
 byte superpower::get_day() {
-	return bcdToDec(wire_RX_8(RTC_addr, RTC_DAY & B00111111));
+	return bcdToDec(wire_RX_8(RTC_addr, RTC_DAY) & B00111111);
 }
 
 byte superpower::get_month() {
