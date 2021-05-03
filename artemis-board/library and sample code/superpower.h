@@ -60,6 +60,7 @@ class superpower {
 		byte get_minute();
 		byte get_hour();
 		byte get_weekday();
+		String get_weekday();
 		byte get_day();
 		byte get_month();
 		byte get_year();
@@ -68,12 +69,11 @@ class superpower {
 		double get_voltage();
 		double get_percentage();
 		
-		void sleep_minutes(byte minutes);
-		void sleep_seconds(byte seconds);
-		int set_alarm(byte minute);
-		int set_alarm(byte minute, byte hour);
-		int set_alarm(byte minute, byte hour, byte weekday);
-		int set_alarm(byte minute, byte hour, byte weekday, byte day_of_month);
+		byte sleep(long seconds);
+		byte set_alarm(byte minute);
+		byte set_alarm(byte minute, byte hour);
+		byte set_alarm(byte minute, byte hour, byte weekday);
+		byte set_alarm(byte minute, byte hour, byte weekday, byte day_of_month);
 		
 		
 		void set_AUX3(bool state);
@@ -94,6 +94,7 @@ class superpower {
 		uint8_t wire_RX_8(uint8_t address,  uint8_t command);
 		
 		byte a;
+		String weekdays[7];
 };
 
 #endif

@@ -3,6 +3,7 @@
 
 superpower::superpower() {
 	a = B00000000;
+	weekdays = {"Monday", "Tuesday", "Wednesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 }
 
 int superpower::init() {
@@ -45,24 +46,28 @@ double superpower::get_percentage() {
 }
 
 //RTC functions
-void superpower::sleep_minutes(byte minutes) {
+byte superpower::sleep(long seconds) {
 	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
 	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
-	wire_TX(RTC_addr, RTC_TIMER, minutes);						//set timer value
-	wire_TX(RTC_addr, RTC_TIMER_C, B10000011);					//enable timer with 1/60HZ
-
-	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
-	set_MCU(false);                    							//mcu regulator off
-}
-
-void superpower::sleep_seconds(byte seconds) {
-	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
-	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
-	wire_TX(RTC_addr, RTC_TIMER, seconds);						//set timer value
-	wire_TX(RTC_addr, RTC_TIMER_C, B10000010);					//enable timer with 1HZ
+	a = 0;
+	if(seconds = 0) {
+		//do nothing
+	}
+	if(seconds >= 256) {
+		wire_TX(RTC_addr, RTC_TIMER, seconds / 60);				//set timer value
+		wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1/60HZ
+		if(seconds % 60) {
+			a = 1;
+		}
+	}
+	else {
+		wire_TX(RTC_addr, RTC_TIMER, seconds);					//set timer value
+		wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1HZ
+	}
 	
 	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
-	set_MCU(false);  
+	set_MCU(false);
+	return a;
 }
 
 int superpower::set_alarm(byte minute) {
@@ -165,6 +170,10 @@ byte superpower::get_hour() {
 
 byte superpower::get_weekday() {
 	return bcdToDec(wire_RX_8(RTC_addr, RTC_Weekday) & B00000111);
+}
+
+String superpower::get_weekday() {
+	return day[bcdToDec(wire_RX_8(RTC_addr, RTC_Weekday) & B00000111)];
 }
 
 byte superpower::get_day() {
