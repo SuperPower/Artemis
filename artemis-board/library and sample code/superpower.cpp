@@ -3,7 +3,6 @@
 
 superpower::superpower() {
 	a = B00000000;
-	weekdays = {"Monday", "Tuesday", "Wednesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 }
 
 int superpower::init() {
@@ -29,7 +28,12 @@ int superpower::init() {
 		wire_TX(RTC_addr, RTC_CONTROL_2, a);
 		return 1;
 	}
-	return 2;
+	else if((wire_RX_8(RTC_addr, RTC_CONTROL_2) & B00001000) == B00001000) {
+		a = wire_RX_8(RTC_addr, RTC_CONTROL_2) & B11110111;				//resets Alarm flag
+		wire_TX(RTC_addr, RTC_CONTROL_2, a);
+		return 2;
+	}
+	return 3;
 }
 
 //fuel gauge functions
@@ -47,81 +51,83 @@ double superpower::get_percentage() {
 
 //RTC functions
 byte superpower::sleep(long seconds) {
-	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
-	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
-	a = 0;
-	if(seconds = 0) {
+	if(seconds == 0) {
 		//do nothing
 	}
-	if(seconds >= 256) {
-		wire_TX(RTC_addr, RTC_TIMER, seconds / 60);				//set timer value
-		wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1/60HZ
-		if(seconds % 60) {
-			a = 1;
+	else {
+		wire_TX(RTC_addr, RTC_CONTROL_2, wire_RX_8(RTC_addr, RTC_CONTROL_2) | B00000001);				//activate TIE
+		wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
+		a = 0;
+		if(seconds >= 256) {
+			wire_TX(RTC_addr, RTC_TIMER, seconds / 60);				//set timer value
+			wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1/60HZ
+			if(seconds % 60) {
+				a = 1;
+			}
+		}
+		else {
+			wire_TX(RTC_addr, RTC_TIMER, seconds);					//set timer value
+			wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1HZ
 		}
 	}
-	else {
-		wire_TX(RTC_addr, RTC_TIMER, seconds);					//set timer value
-		wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1HZ
-	}
 	
-	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
+	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);					//sets FG power mode to sleep
 	set_MCU(false);
 	return a;
 }
 
-int superpower::set_alarm(byte minute) {
+byte superpower::set_alarm(byte minute) {
 	return set_alarm(minute, B10000000);
 }
 
-int superpower::set_alarm(byte minute, byte hour) {
+byte superpower::set_alarm(byte minute, byte hour) {
 	return set_alarm(minute, hour, B10000000);
 }
 
-int superpower::set_alarm(byte minute, byte hour, byte weekday) {
+byte superpower::set_alarm(byte minute, byte hour, byte weekday) {
 	return set_alarm(minute, hour, weekday, B10000000);
 }
 
-int superpower::set_alarm(byte minute, byte hour, byte weekday, byte day_of_month) {
+byte superpower::set_alarm(byte minute, byte hour, byte weekday, byte day_of_month) {
 	//check minute format
 	if(minute > 60) {
 		a = 0;
 	}
 	else {
-		a = wire_TX(RTC_addr, RTC_AL_MIN, decToBcd(minute) | B10000000);
+		a = wire_TX(RTC_addr, RTC_AL_MIN, decToBcd(minute));
 	}
 	//check hour format
 	if(hour > 23) {
 		a = 0;
 	}
 	else if(hour != B10000000) {
-		a = wire_TX(RTC_addr, RTC_AL_HOUR, decToBcd(hour) | B10000000);
+		a = wire_TX(RTC_addr, RTC_AL_HOUR, decToBcd(hour));
 	}
 	else {
-		wire_TX(RTC_addr, RTC_AL_HOUR, B00000000);
+		wire_TX(RTC_addr, RTC_AL_HOUR, B10000000);
 	}
 	//check weekday format
 	if(weekday > 6) {
 		a = 0;
 	}
 	else if(weekday != B10000000) {
-		a = wire_TX(RTC_addr, RTC_AL_WDAY, decToBcd(weekday) | B10000000);
+		a = wire_TX(RTC_addr, RTC_AL_WDAY, decToBcd(weekday));
 	}
 	else {
-		wire_TX(RTC_addr, RTC_AL_WDAY, B00000000);
+		wire_TX(RTC_addr, RTC_AL_WDAY, B10000000);
 	}
 	//check day of month format
 	if(day_of_month > 31 || day_of_month == B00000000) {
 		a = 0;
 	}
 	else if(day_of_month != B10000000) {
-		a = wire_TX(RTC_addr, RTC_AL_DAY, decToBcd(day_of_month) | B10000000);
+		a = wire_TX(RTC_addr, RTC_AL_DAY, decToBcd(day_of_month));
 	}
 	else {
-		wire_TX(RTC_addr, RTC_AL_DAY, B00000000);
+		wire_TX(RTC_addr, RTC_AL_DAY, B10000000);
 	}
 	//enable the alarm
-	wire_TX(RTC_addr, RTC_CONTROL_2,  ~(~(wire_RX(RTC_addr, RTC_CONTROL_2) & B00000010) & B00001000));
+	wire_TX(RTC_addr, RTC_CONTROL_2,  wire_RX_8(RTC_addr, RTC_CONTROL_2) | B00000010); //activate AIE
 	
 	return a;
 }
@@ -172,10 +178,6 @@ byte superpower::get_weekday() {
 	return bcdToDec(wire_RX_8(RTC_addr, RTC_Weekday) & B00000111);
 }
 
-String superpower::get_weekday() {
-	return day[bcdToDec(wire_RX_8(RTC_addr, RTC_Weekday) & B00000111)];
-}
-
 byte superpower::get_day() {
 	return bcdToDec(wire_RX_8(RTC_addr, RTC_DAY) & B00111111);
 }
@@ -198,7 +200,13 @@ void superpower::set_AUX5(bool state) {
 }
 
 void superpower::set_Charging(bool state) {
-	set_EXP(3, state);
+	if(!state) {
+		wire_TX(EXP_addr, EXP_CONFIG, B00000000);
+		set_EXP(3, state);
+	}
+	else {
+		wire_TX(EXP_addr, EXP_CONFIG, B00001000);
+	}
 }
 
 ///////////////////////////////////Private Functions//////////////////////////////////////

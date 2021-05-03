@@ -42,8 +42,8 @@
 
 #define RTC_AL_MIN 0x09         //[AE_M |                           MINUTE(0-59)  ]
 #define RTC_AL_HOUR 0x0A        //[AE_H |  -  |                     HOUR(0-23)    ]
-#define RTC_AL_WDAY 0x0B        //[AE_D |  -  |                     DAY(0-31)     ]
-#define RTC_AL_WEEK 0x0C        //[AE_W |  -  |  -  |  -  |  -  |   WEEKDAY(0-7)  ]
+#define RTC_AL_DAY 0x0B         //[AE_D |  -  |                     DAY(0-31)     ]
+#define RTC_AL_WDAY 0x0C        //[AE_W |  -  |  -  |  -  |  -  |   WEEKDAY(0-7)  ]
 
 #define RTC_CLKOUT 0x0D         //[ FE  |  -  |  -  |  -  |  -  |  -  |     FD    ]
 #define RTC_TIMER_C 0x0E        //[ TE  |  -  |  -  |  -  |  -  |  -  |     TD    ]
@@ -60,7 +60,6 @@ class superpower {
 		byte get_minute();
 		byte get_hour();
 		byte get_weekday();
-		String get_weekday();
 		byte get_day();
 		byte get_month();
 		byte get_year();
@@ -97,7 +96,6 @@ class superpower {
 		uint8_t wire_RX_8(uint8_t address,  uint8_t command);
 		
 		byte a;
-		String weekdays[7];
 };
 
 #endif
