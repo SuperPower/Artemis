@@ -31,6 +31,95 @@ int superpower::init() {
 	return 2;
 }
 
+//fuel gauge functions
+double superpower::get_temperature() {
+	return (double)map(wire_RX_16(FG_addr, FG_CELLTEMPERATURE), 0x9E4, 0xD04, -200, 600) / 10;
+}
+
+double superpower::get_voltage() {
+	return ((double)wire_RX_16(FG_addr, FG_CELLVOLTAGE)) / 1000;
+}
+
+double superpower::get_percentage() {
+	return ((double)wire_RX_16(FG_addr, FG_CELLITE)) / 10;
+}
+
+//RTC functions
+void superpower::sleep_minutes(byte minutes) {
+	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
+	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
+	wire_TX(RTC_addr, RTC_TIMER, minutes);						//set timer value
+	wire_TX(RTC_addr, RTC_TIMER_C, B10000011);					//enable timer with 1/60HZ
+
+	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
+	set_MCU(false);                    							//mcu regulator off
+}
+
+void superpower::sleep_seconds(byte seconds) {
+	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
+	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
+	wire_TX(RTC_addr, RTC_TIMER, seconds);						//set timer value
+	wire_TX(RTC_addr, RTC_TIMER_C, B10000010);					//enable timer with 1HZ
+	
+	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
+	set_MCU(false);  
+}
+
+int superpower::set_alarm(byte minute) {
+	return set_alarm(minute, B10000000);
+}
+
+int superpower::set_alarm(byte minute, byte hour) {
+	return set_alarm(minute, hour, B10000000);
+}
+
+int superpower::set_alarm(byte minute, byte hour, byte weekday) {
+	return set_alarm(minute, hour, weekday, B10000000);
+}
+
+int superpower::set_alarm(byte minute, byte hour, byte weekday, byte day_of_month) {
+	//check minute format
+	if(minute > 60) {
+		a = 0;
+	}
+	else {
+		a = wire_TX(RTC_addr, RTC_AL_MIN, decToBcd(minute) | B10000000);
+	}
+	//check hour format
+	if(hour > 23) {
+		a = 0;
+	}
+	else if(hour != B10000000) {
+		a = wire_TX(RTC_addr, RTC_AL_HOUR, decToBcd(hour) | B10000000);
+	}
+	else {
+		wire_TX(RTC_addr, RTC_AL_HOUR, B00000000);
+	}
+	//check weekday format
+	if(weekday > 6) {
+		a = 0;
+	}
+	else if(weekday != B10000000) {
+		a = wire_TX(RTC_addr, RTC_AL_WDAY, decToBcd(weekday) | B10000000);
+	}
+	else {
+		wire_TX(RTC_addr, RTC_AL_WDAY, B00000000);
+	}
+	//check day of month format
+	if(day_of_month > 31 || day_of_month == B00000000) {
+		a = 0;
+	}
+	else if(day_of_month != B10000000) {
+		a = wire_TX(RTC_addr, RTC_AL_DAY, decToBcd(day_of_month) | B10000000);
+	}
+	else {
+		wire_TX(RTC_addr, RTC_AL_DAY, B00000000);
+	}
+	//enable the alarm
+	wire_TX(RTC_addr, RTC_CONTROL_2,  ~(~(wire_RX(RTC_addr, RTC_CONTROL_2) & B00000010) & B00001000));
+	
+	return a;
+}
 
 void superpower::set_time(byte second, byte minute, byte hour, byte weekday, byte dayofmonth, byte month, byte year) {
 	Wire.beginTransmission(RTC_addr);
@@ -90,41 +179,7 @@ byte superpower::get_year() {
 	return bcdToDec(wire_RX_8(RTC_addr, RTC_YEAR));
 }
 
-
-double superpower::get_temperature() {
-	return (double)map(wire_RX_16(FG_addr, FG_CELLTEMPERATURE), 0x9E4, 0xD04, -200, 600) / 10;
-}
-
-double superpower::get_voltage() {
-	return ((double)wire_RX_16(FG_addr, FG_CELLVOLTAGE)) / 1000;
-}
-
-double superpower::get_percentage() {
-	return ((double)wire_RX_16(FG_addr, FG_CELLITE)) / 10;
-}
-
-
-void superpower::sleep_minutes(byte minutes) {
-	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
-	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
-	wire_TX(RTC_addr, RTC_TIMER, minutes);						//set timer value
-	wire_TX(RTC_addr, RTC_TIMER_C, B10000011);					//enable timer with 1/60HZ
-
-	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
-	set_MCU(false);                    							//mcu regulator off
-}
-
-void superpower::sleep_seconds(byte seconds) {
-	wire_TX(RTC_addr, RTC_CONTROL_2, B00000001);				//activate TIE and clear TF
-	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
-	wire_TX(RTC_addr, RTC_TIMER, seconds);						//set timer value
-	wire_TX(RTC_addr, RTC_TIMER_C, B10000010);					//enable timer with 1HZ
-	
-	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);				//sets FG power mode to sleep
-	set_MCU(false);  
-}
-
-
+//IO Expander functions
 void superpower::set_AUX3(bool state) {
 	set_EXP(1, state);
 }
@@ -156,6 +211,7 @@ void superpower::config_EXP(byte pin, bool type) {
 	}
 	wire_TX(EXP_addr, EXP_CONFIG, a);
 }
+
 
 ///////////////////////////////////Private Functions//////////////////////////////////////
 

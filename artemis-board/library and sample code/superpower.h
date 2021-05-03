@@ -42,7 +42,7 @@
 
 #define RTC_AL_MIN 0x09         //[AE_M |                           MINUTE(0-59)  ]
 #define RTC_AL_HOUR 0x0A        //[AE_H |  -  |                     HOUR(0-23)    ]
-#define RTC_AL_DAY 0x0B         //[AE_D |  -  |                     DAY(0-31)     ]
+#define RTC_AL_WDAY 0x0B        //[AE_D |  -  |                     DAY(0-31)     ]
 #define RTC_AL_WEEK 0x0C        //[AE_W |  -  |  -  |  -  |  -  |   WEEKDAY(0-7)  ]
 
 #define RTC_CLKOUT 0x0D         //[ FE  |  -  |  -  |  -  |  -  |  -  |     FD    ]
@@ -70,6 +70,11 @@ class superpower {
 		
 		void sleep_minutes(byte minutes);
 		void sleep_seconds(byte seconds);
+		int set_alarm(byte minute);
+		int set_alarm(byte minute, byte hour);
+		int set_alarm(byte minute, byte hour, byte weekday);
+		int set_alarm(byte minute, byte hour, byte weekday, byte day_of_month);
+		
 		
 		void set_AUX3(bool state);
 		void set_AUX5(bool state);
