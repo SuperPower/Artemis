@@ -197,6 +197,12 @@ void superpower::set_AUX5(bool state) {
 	set_EXP(2, state);
 }
 
+void superpower::set_Charging(bool state) {
+	set_EXP(3, state);
+}
+
+///////////////////////////////////Private Functions//////////////////////////////////////
+
 bool superpower::get_EXP(byte pin) {
 	return wire_RX_8(EXP_addr, EXP_INPUT) & (B00000001 << pin);
 }
@@ -220,9 +226,6 @@ void superpower::config_EXP(byte pin, bool type) {
 	}
 	wire_TX(EXP_addr, EXP_CONFIG, a);
 }
-
-
-///////////////////////////////////Private Functions//////////////////////////////////////
 
 void superpower::set_MCU(bool state) {
 	set_EXP(0, state);

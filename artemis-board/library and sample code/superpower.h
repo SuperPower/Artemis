@@ -79,15 +79,18 @@ class superpower {
 		void set_AUX3(bool state);
 		void set_AUX5(bool state);
 		
+		void set_Charging(bool state);
+		
+	private:
+		void set_MCU(bool state);
 		bool get_EXP(byte pin);
 		void set_EXP(byte pin, bool state);
 		void config_EXP(byte pin, bool type);					//1: OUTPUT 0: INPUT
 		
-	private:
-		void set_MCU(bool state);
 		byte decToBcd(byte value);
 		byte bcdToDec(byte value);
 		uint8_t crc8(uint8_t *data, int len);
+		
 		uint8_t wire_TX(uint8_t address, uint8_t command, uint16_t msg, bool crc);
 		uint8_t wire_TX(uint8_t address, uint8_t command, uint8_t msg);
 		uint16_t wire_RX_16(uint8_t address, uint8_t command);
