@@ -68,7 +68,7 @@ class superpower {
 		double get_voltage();
 		double get_percentage();
 		
-		byte sleep(long seconds);
+		byte sleep(int seconds);
 		byte set_alarm(byte minute);
 		byte set_alarm(byte minute, byte hour);
 		byte set_alarm(byte minute, byte hour, byte weekday);
@@ -96,6 +96,7 @@ class superpower {
 		uint8_t wire_RX_8(uint8_t address,  uint8_t command);
 		
 		byte a;
+		byte b;
 };
 
 #endif

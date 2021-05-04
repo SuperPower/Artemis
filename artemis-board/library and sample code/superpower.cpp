@@ -3,6 +3,7 @@
 
 superpower::superpower() {
 	a = B00000000;
+	b = B00000000;
 }
 
 int superpower::init() {
@@ -24,12 +25,12 @@ int superpower::init() {
 	set_MCU(true);
 	wire_TX(FG_addr, FG_POWERMODE, 0x0001 , true);						//sets FG power mode to active
 	if((wire_RX_8(RTC_addr, RTC_CONTROL_2) & B00000100) == B00000100) {
-		a = wire_RX_8(RTC_addr, RTC_CONTROL_2) & B11111011;				//resets Timer flag
+		a = wire_RX_8(RTC_addr, RTC_CONTROL_2) & B11111010;				//resets Timer flag, clear TIE
 		wire_TX(RTC_addr, RTC_CONTROL_2, a);
 		return 1;
 	}
 	else if((wire_RX_8(RTC_addr, RTC_CONTROL_2) & B00001000) == B00001000) {
-		a = wire_RX_8(RTC_addr, RTC_CONTROL_2) & B11110111;				//resets Alarm flag
+		a = wire_RX_8(RTC_addr, RTC_CONTROL_2) & B11110101;				//resets Alarm flag, disable AIE
 		wire_TX(RTC_addr, RTC_CONTROL_2, a);
 		return 2;
 	}
@@ -50,23 +51,25 @@ double superpower::get_percentage() {
 }
 
 //RTC functions
-byte superpower::sleep(long seconds) {
+byte superpower::sleep(int seconds) {
 	if(seconds == 0) {
 		//do nothing
 	}
 	else {
-		wire_TX(RTC_addr, RTC_CONTROL_2, wire_RX_8(RTC_addr, RTC_CONTROL_2) | B00000001);				//activate TIE
+		wire_TX(RTC_addr, RTC_CONTROL_2, (wire_RX_8(RTC_addr, RTC_CONTROL_2) | B00000001) & B11111011);	//activate TIE and clear TF
 		wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
 		a = 0;
 		if(seconds >= 256) {
-			wire_TX(RTC_addr, RTC_TIMER, seconds / 60);				//set timer value
-			wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1/60HZ
+			b = seconds / 60;
+			wire_TX(RTC_addr, RTC_TIMER, b);						//set timer value
+			wire_TX(RTC_addr, RTC_TIMER_C, B10000011);				//enable timer with 1/60HZ
 			if(seconds % 60) {
 				a = 1;
 			}
 		}
 		else {
-			wire_TX(RTC_addr, RTC_TIMER, seconds);					//set timer value
+			b = seconds;
+			wire_TX(RTC_addr, RTC_TIMER, b);						//set timer value
 			wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1HZ
 		}
 	}
