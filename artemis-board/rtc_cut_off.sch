@@ -111,8 +111,6 @@ F 3 "" H 3050 2500 50  0001 C CNN
 	1    3050 2500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3050 2450 3050 2500
 $Comp
 L Transistor_FET:2N7002 Q1
 U 1 1 5F81E351
@@ -126,11 +124,6 @@ F 5 "C8545" H 3150 2050 50  0001 C CNN "LCSC"
 	1    3150 2050
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	3050 2250 3050 2450
-Connection ~ 3050 2450
-Wire Wire Line
-	3050 2450 3400 2450
 Wire Wire Line
 	3050 1800 3050 1850
 Text HLabel 1350 950  0    50   Input ~ 0
@@ -308,25 +301,6 @@ Wire Wire Line
 Wire Wire Line
 	4400 1750 4400 1650
 Connection ~ 4400 1650
-$Comp
-L Device:R R?
-U 1 1 60A05ACF
-P 3400 2250
-AR Path="/5F639F48/60A05ACF" Ref="R?"  Part="1" 
-AR Path="/5F63A0E9/60A05ACF" Ref="R?"  Part="1" 
-AR Path="/5F63A00B/60A05ACF" Ref="R8"  Part="1" 
-F 0 "R8" H 3200 2200 50  0000 L CNN
-F 1 "1M" H 3250 2300 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3330 2250 50  0001 C CNN
-F 3 "~" H 3400 2250 50  0001 C CNN
-F 4 "C22935" H 3400 2250 50  0001 C CNN "LCSC"
-	1    3400 2250
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3400 2100 3400 2050
-Wire Wire Line
-	3400 2400 3400 2450
 Text Label 4150 1950 0    50   ~ 0
 ~INT
 Wire Wire Line
@@ -367,8 +341,6 @@ F 3 "" H 3050 3650 50  0001 C CNN
 	1    3050 3650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3050 3600 3050 3650
 $Comp
 L Transistor_FET:2N7002 Q3
 U 1 1 60A20AA5
@@ -383,11 +355,6 @@ F 5 "C8545" H 3150 3200 50  0001 C CNN "LCSC"
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	3050 3400 3050 3600
-Connection ~ 3050 3600
-Wire Wire Line
-	3050 3600 3400 3600
-Wire Wire Line
 	3050 2950 3050 3000
 Text Label 2850 2950 0    50   ~ 0
 CH_DIS
@@ -395,25 +362,6 @@ Wire Wire Line
 	2850 2950 3050 2950
 Wire Wire Line
 	3350 3200 3400 3200
-$Comp
-L Device:R R?
-U 1 1 60A20AB3
-P 3400 3400
-AR Path="/5F639F48/60A20AB3" Ref="R?"  Part="1" 
-AR Path="/5F63A0E9/60A20AB3" Ref="R?"  Part="1" 
-AR Path="/5F63A00B/60A20AB3" Ref="R9"  Part="1" 
-F 0 "R9" H 3200 3350 50  0000 L CNN
-F 1 "1M" H 3250 3450 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3330 3400 50  0001 C CNN
-F 3 "~" H 3400 3400 50  0001 C CNN
-F 4 "C22935" H 3400 3400 50  0001 C CNN "LCSC"
-	1    3400 3400
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3400 3250 3400 3200
-Wire Wire Line
-	3400 3550 3400 3600
 Text Label 3400 3200 0    50   ~ 0
 ~CH_DIS
 $Comp
@@ -543,4 +491,56 @@ Wire Wire Line
 Wire Wire Line
 	5750 3650 6250 3650
 Connection ~ 6250 3650
+Wire Wire Line
+	3400 2100 3400 2050
+Wire Wire Line
+	3400 2400 3400 2450
+$Comp
+L Device:R R?
+U 1 1 60A05ACF
+P 3400 2250
+AR Path="/5F639F48/60A05ACF" Ref="R?"  Part="1" 
+AR Path="/5F63A0E9/60A05ACF" Ref="R?"  Part="1" 
+AR Path="/5F63A00B/60A05ACF" Ref="R8"  Part="1" 
+F 0 "R8" H 3200 2200 50  0000 L CNN
+F 1 "1M" H 3250 2300 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3330 2250 50  0001 C CNN
+F 3 "~" H 3400 2250 50  0001 C CNN
+F 4 "C22935" H 3400 2250 50  0001 C CNN "LCSC"
+	1    3400 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3050 2250 3050 2450
+Wire Wire Line
+	3050 2450 3050 2500
+Connection ~ 3050 2450
+Wire Wire Line
+	3050 2450 3400 2450
+Wire Wire Line
+	3400 3250 3400 3200
+Wire Wire Line
+	3400 3550 3400 3600
+Wire Wire Line
+	3050 3400 3050 3600
+Wire Wire Line
+	3050 3600 3050 3650
+Connection ~ 3050 3600
+Wire Wire Line
+	3050 3600 3400 3600
+$Comp
+L Device:R R?
+U 1 1 60A20AB3
+P 3400 3400
+AR Path="/5F639F48/60A20AB3" Ref="R?"  Part="1" 
+AR Path="/5F63A0E9/60A20AB3" Ref="R?"  Part="1" 
+AR Path="/5F63A00B/60A20AB3" Ref="R9"  Part="1" 
+F 0 "R9" H 3200 3350 50  0000 L CNN
+F 1 "1M" H 3250 3450 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3330 3400 50  0001 C CNN
+F 3 "~" H 3400 3400 50  0001 C CNN
+F 4 "C22935" H 3400 3400 50  0001 C CNN "LCSC"
+	1    3400 3400
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
