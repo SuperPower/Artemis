@@ -103,36 +103,36 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0109
 U 1 1 5F81AC3F
-P 3950 3600
-F 0 "#PWR0109" H 3950 3350 50  0001 C CNN
-F 1 "GND" H 3955 3427 50  0000 C CNN
-F 2 "" H 3950 3600 50  0001 C CNN
-F 3 "" H 3950 3600 50  0001 C CNN
-	1    3950 3600
+P 3050 2500
+F 0 "#PWR0109" H 3050 2250 50  0001 C CNN
+F 1 "GND" H 3055 2327 50  0000 C CNN
+F 2 "" H 3050 2500 50  0001 C CNN
+F 3 "" H 3050 2500 50  0001 C CNN
+	1    3050 2500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3950 3550 3950 3600
+	3050 2450 3050 2500
 $Comp
 L Transistor_FET:2N7002 Q1
 U 1 1 5F81E351
-P 4050 3150
-F 0 "Q1" H 4255 3196 50  0000 L CNN
-F 1 "2N7002" H 4255 3105 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4250 3075 50  0001 L CIN
-F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 4050 3150 50  0001 L CNN
-F 4 "" H 4050 3150 50  0001 C CNN "Field4"
-F 5 "C8545" H 4050 3150 50  0001 C CNN "LCSC"
-	1    4050 3150
+P 3150 2050
+F 0 "Q1" H 3355 2096 50  0000 L CNN
+F 1 "2N7002" H 3355 2005 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3350 1975 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 3150 2050 50  0001 L CNN
+F 4 "" H 3150 2050 50  0001 C CNN "Field4"
+F 5 "C8545" H 3150 2050 50  0001 C CNN "LCSC"
+	1    3150 2050
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	3950 3350 3950 3550
-Connection ~ 3950 3550
+	3050 2250 3050 2450
+Connection ~ 3050 2450
 Wire Wire Line
-	3950 3550 5100 3550
+	3050 2450 3400 2450
 Wire Wire Line
-	3950 2900 3950 2950
+	3050 1800 3050 1850
 Text HLabel 1350 950  0    50   Input ~ 0
 SCL
 Text HLabel 1350 850  0    50   BiDi ~ 0
@@ -163,10 +163,10 @@ Text Label 4600 4950 0    50   ~ 0
 INT
 Wire Wire Line
 	4600 4950 4800 4950
-Text Label 3750 2900 0    50   ~ 0
+Text Label 2850 1800 0    50   ~ 0
 INT
 Wire Wire Line
-	3750 2900 3950 2900
+	2850 1800 3050 1800
 Text Label 6150 3150 2    50   ~ 0
 INT
 Wire Wire Line
@@ -213,7 +213,7 @@ Wire Notes Line
 	3950 5650 3950 4100
 Text Notes 4000 4250 0    50   ~ 0
 RTC\n
-Text Notes 3400 2000 0    50   ~ 0
+Text Notes 2550 1500 0    50   ~ 0
 IO Expander
 Text HLabel 1350 2100 0    50   Input ~ 0
 CHARGE-DISABLE
@@ -225,20 +225,12 @@ Wire Notes Line
 	550  600  1850 600 
 Wire Notes Line
 	1850 2450 550  2450
-Wire Notes Line
-	3350 4000 3350 1850
-Wire Notes Line
-	3350 1850 6700 1850
-Wire Notes Line
-	3350 4000 6700 4000
-Wire Notes Line
-	6700 1850 6700 4000
 Text Label 4800 3250 0    50   ~ 0
 3.3_EN
 Text Label 4800 3350 0    50   ~ 0
 5V_EN
 Text Label 4800 3450 0    50   ~ 0
-CH_DIS
+~CH_DIS
 $Comp
 L Device:R R4
 U 1 1 5FC6F3D4
@@ -256,7 +248,7 @@ Wire Wire Line
 Text Label 5050 2600 2    50   ~ 0
 3v3_I2C
 Wire Wire Line
-	4250 3150 5100 3150
+	3350 2050 3400 2050
 $Comp
 L Device:C C22
 U 1 1 5FC9C8EC
@@ -290,8 +282,6 @@ Wire Notes Line
 	1850 600  1850 2450
 Wire Notes Line
 	550  600  550  2450
-Text Notes 3400 2150 0    50   ~ 0
-If not populated add pulldowns to the 3v3 and 5v EN pins
 Text Label 6450 4750 2    50   ~ 0
 3v3_I2C
 Wire Wire Line
@@ -323,4 +313,112 @@ Wire Wire Line
 Wire Wire Line
 	5050 2950 5050 2850
 Connection ~ 5050 2850
+$Comp
+L Device:R R?
+U 1 1 60A05ACF
+P 3400 2250
+AR Path="/5F639F48/60A05ACF" Ref="R?"  Part="1" 
+AR Path="/5F63A0E9/60A05ACF" Ref="R?"  Part="1" 
+AR Path="/5F63A00B/60A05ACF" Ref="R8"  Part="1" 
+F 0 "R8" H 3200 2200 50  0000 L CNN
+F 1 "1M" H 3250 2300 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3330 2250 50  0001 C CNN
+F 3 "~" H 3400 2250 50  0001 C CNN
+F 4 "C22935" H 3400 2250 50  0001 C CNN "LCSC"
+	1    3400 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3400 2100 3400 2050
+Wire Wire Line
+	3400 2400 3400 2450
+Text Label 4800 3150 0    50   ~ 0
+~INT
+Wire Wire Line
+	4800 3150 5100 3150
+Wire Wire Line
+	5100 3550 4900 3550
+Wire Wire Line
+	4900 3550 4900 3600
+$Comp
+L power:GND #PWR?
+U 1 1 60A0ABA2
+P 4900 3600
+F 0 "#PWR?" H 4900 3350 50  0001 C CNN
+F 1 "GND" H 4905 3427 50  0000 C CNN
+F 2 "" H 4900 3600 50  0001 C CNN
+F 3 "" H 4900 3600 50  0001 C CNN
+	1    4900 3600
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	6700 1350 6700 4000
+Wire Notes Line
+	2500 1350 2500 4000
+Wire Notes Line
+	2500 1350 6700 1350
+Wire Notes Line
+	2500 4000 6700 4000
+Text Label 3400 2050 0    50   ~ 0
+~INT
+$Comp
+L power:GND #PWR?
+U 1 1 60A20A9C
+P 3050 3650
+F 0 "#PWR?" H 3050 3400 50  0001 C CNN
+F 1 "GND" H 3055 3477 50  0000 C CNN
+F 2 "" H 3050 3650 50  0001 C CNN
+F 3 "" H 3050 3650 50  0001 C CNN
+	1    3050 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 3600 3050 3650
+$Comp
+L Transistor_FET:2N7002 Q3
+U 1 1 60A20AA5
+P 3150 3200
+F 0 "Q3" H 3355 3246 50  0000 L CNN
+F 1 "2N7002" H 3355 3155 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3350 3125 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 3150 3200 50  0001 L CNN
+F 4 "" H 3150 3200 50  0001 C CNN "Field4"
+F 5 "C8545" H 3150 3200 50  0001 C CNN "LCSC"
+	1    3150 3200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 3400 3050 3600
+Connection ~ 3050 3600
+Wire Wire Line
+	3050 3600 3400 3600
+Wire Wire Line
+	3050 2950 3050 3000
+Text Label 2850 2950 0    50   ~ 0
+CH_DIS
+Wire Wire Line
+	2850 2950 3050 2950
+Wire Wire Line
+	3350 3200 3400 3200
+$Comp
+L Device:R R?
+U 1 1 60A20AB3
+P 3400 3400
+AR Path="/5F639F48/60A20AB3" Ref="R?"  Part="1" 
+AR Path="/5F63A0E9/60A20AB3" Ref="R?"  Part="1" 
+AR Path="/5F63A00B/60A20AB3" Ref="R9"  Part="1" 
+F 0 "R9" H 3200 3350 50  0000 L CNN
+F 1 "1M" H 3250 3450 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3330 3400 50  0001 C CNN
+F 3 "~" H 3400 3400 50  0001 C CNN
+F 4 "C22935" H 3400 3400 50  0001 C CNN "LCSC"
+	1    3400 3400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3400 3250 3400 3200
+Wire Wire Line
+	3400 3550 3400 3600
+Text Label 3400 3200 0    50   ~ 0
+~CH_DIS
 $EndSCHEMATC
