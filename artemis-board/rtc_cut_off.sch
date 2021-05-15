@@ -522,10 +522,10 @@ Wire Wire Line
 Text Label 1750 2250 2    50   ~ 0
 Vm
 $Comp
-L Device:C C?
+L Device:C C26
 U 1 1 60A8251F
 P 5750 3450
-F 0 "C?" H 5550 3400 50  0000 L CNN
+F 0 "C26" H 5500 3400 50  0000 L CNN
 F 1 "0.1µF" H 5400 3500 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5788 3300 50  0001 C CNN
 F 3 "~" H 5750 3450 50  0001 C CNN
