@@ -114,6 +114,7 @@ F6 "CHARGE-DISABLE" I L 4900 4450 50
 F7 "3v3V_EN" O R 6150 4600 50 
 F8 "3v3_I2C" I L 4900 4350 50 
 F9 "VBat" I L 4900 4150 50 
+F10 "Vmeasure" O R 6150 4750 50 
 $EndSheet
 $Sheet
 S 2850 4000 1250 1150
@@ -242,7 +243,6 @@ Text Label 8900 3950 0    50   ~ 0
 3v3
 Wire Wire Line
 	8600 3850 9300 3850
-NoConn ~ 9300 4050
 Wire Wire Line
 	4300 2200 4800 2200
 Wire Wire Line
@@ -313,4 +313,10 @@ Wire Wire Line
 Connection ~ 4800 2200
 Wire Wire Line
 	4800 2200 4900 2200
+Wire Wire Line
+	6150 4750 8950 4750
+Wire Wire Line
+	8950 4750 8950 4050
+Wire Wire Line
+	8950 4050 9300 4050
 $EndSCHEMATC
