@@ -149,10 +149,6 @@ Wire Notes Line
 	550  1750 550  550 
 Text Notes 600  650  0    50   ~ 0
 Labels\n
-Text Label 4400 2700 0    50   ~ 0
-Vin_header
-Wire Wire Line
-	4400 2700 4900 2700
 Wire Wire Line
 	3300 3600 3300 3650
 $Comp
