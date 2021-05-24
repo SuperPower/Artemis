@@ -870,4 +870,6 @@ F 4 "C23352" H 4750 5450 50  0001 C CNN "LCSC"
 	1    4750 5450
 	1    0    0    -1  
 $EndComp
+Text Notes 4600 2100 0    50   ~ 0
+Alternative 3v3 regulators: C50936, C111686, C236673
 $EndSCHEMATC
