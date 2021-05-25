@@ -341,9 +341,6 @@ Wire Wire Line
 Connection ~ 4150 5600
 Wire Wire Line
 	4150 5600 4150 5700
-Wire Wire Line
-	4100 4900 4250 4900
-Connection ~ 4100 4900
 Connection ~ 4250 4900
 Wire Wire Line
 	4350 4900 4250 4900
@@ -362,8 +359,6 @@ F 3 "" H 4150 5700 50  0001 C CNN
 	1    4150 5700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4000 4900 4100 4900
 Wire Wire Line
 	3300 5250 3300 5100
 Wire Wire Line
@@ -614,17 +609,6 @@ F 4 "C18701" H 3850 5700 50  0001 C CNN "LCSC"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP5
-U 1 1 5F9A2164
-P 4100 4900
-F 0 "TP5" H 4050 5100 50  0000 L CNN
-F 1 "TestPoint" H 4158 4927 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 4300 4900 50  0001 C CNN
-F 3 "~" H 4300 4900 50  0001 C CNN
-	1    4100 4900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Transistor_FET:2N7002 Q8
 U 1 1 5FCC3D25
 P 1950 5400
@@ -872,4 +856,6 @@ F 4 "C23352" H 4750 5450 50  0001 C CNN "LCSC"
 $EndComp
 Text Notes 4600 2100 0    50   ~ 0
 Alternative 3v3 regulators: C50936, C111686, C236673
+Wire Wire Line
+	4000 4900 4250 4900
 $EndSCHEMATC
