@@ -52,29 +52,27 @@ double superpower::get_percentage() {
 
 //RTC functions
 byte superpower::sleep(int seconds) {
+	wire_TX(RTC_addr, RTC_CONTROL_2, (wire_RX_8(RTC_addr, RTC_CONTROL_2) | B00000001) & B11111011);	//activate TIE and clear TF
+	wire_TX(RTC_addr, RTC_TIMER_C, B00000011);														//disables timer
+	a = 0;
 	if(seconds == 0) {
-		//do nothing
+		wire_TX(RTC_addr, RTC_CONTROL_2, (wire_RX_8(RTC_addr, RTC_CONTROL_2) & B11111110)); 		//deactivate TIE
+	}
+	else if(seconds >= 256) {
+		b = seconds / 60;
+		wire_TX(RTC_addr, RTC_TIMER, b);															//set timer value
+		wire_TX(RTC_addr, RTC_TIMER_C, B10000011);													//enable timer with 1/60HZ
+		if(seconds % 60) {
+			a = 1;
+		}
 	}
 	else {
-		wire_TX(RTC_addr, RTC_CONTROL_2, (wire_RX_8(RTC_addr, RTC_CONTROL_2) | B00000001) & B11111011);	//activate TIE and clear TF
-		wire_TX(RTC_addr, RTC_TIMER_C, B00000011);					//disables timer
-		a = 0;
-		if(seconds >= 256) {
-			b = seconds / 60;
-			wire_TX(RTC_addr, RTC_TIMER, b);						//set timer value
-			wire_TX(RTC_addr, RTC_TIMER_C, B10000011);				//enable timer with 1/60HZ
-			if(seconds % 60) {
-				a = 1;
-			}
-		}
-		else {
-			b = seconds;
-			wire_TX(RTC_addr, RTC_TIMER, b);						//set timer value
-			wire_TX(RTC_addr, RTC_TIMER_C, B10000010);				//enable timer with 1HZ
-		}
+		b = seconds;
+		wire_TX(RTC_addr, RTC_TIMER, b);															//set timer value
+		wire_TX(RTC_addr, RTC_TIMER_C, B10000010);													//enable timer with 1HZ
 	}
 	
-	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);					//sets FG power mode to sleep
+	wire_TX(FG_addr, FG_POWERMODE, 0x0002, true);													//sets FG power mode to sleep
 	set_MCU(false);
 	return a;
 }
@@ -91,6 +89,8 @@ byte superpower::set_alarm(byte minute, byte hour, byte weekday) {
 	return set_alarm(minute, hour, weekday, B10000000);
 }
 
+//sets alarm according to the input parameters. parameter B10000000 deactivates that comparison
+//Note: does not power off the MCU
 byte superpower::set_alarm(byte minute, byte hour, byte weekday, byte day_of_month) {
 	//check minute format
 	if(minute > 60) {
@@ -202,13 +202,21 @@ void superpower::set_AUX5(bool state) {
 	set_EXP(2, state);
 }
 
+bool superpower::get_AUX3() {
+	return get_EXP(1);
+}
+
+bool superpower::get_AUX5() {
+	return get_EXP(2);
+}
+
 void superpower::set_Charging(bool state) {
 	if(!state) {
-		wire_TX(EXP_addr, EXP_CONFIG, B00000000);
+		config_EXP(3, 1); //sets expander charge disable pin as a output
 		set_EXP(3, state);
 	}
 	else {
-		wire_TX(EXP_addr, EXP_CONFIG, B00001000);
+		config_EXP(3, 0); //sets expander charge disable pin as a input to reduce consumption even further
 	}
 }
 
@@ -228,12 +236,13 @@ void superpower::set_EXP(byte pin, bool state) {
 	wire_TX(EXP_addr, EXP_OUTPUT, a);
 }
 
+//type 1: OUTPUT, 0: INPUT
 void superpower::config_EXP(byte pin, bool type) {
 	if(type) {
-		a = wire_RX_8(EXP_addr, EXP_CONFIG) & (B11111111 - (B00000001 << pin));
+		a = (wire_RX_8(EXP_addr, EXP_CONFIG) & (B11111111 - (B00000001 << pin)));
 	}
 	else {
-		a = wire_RX_8(EXP_addr, EXP_CONFIG) | (B00000001 << pin);
+		a = (wire_RX_8(EXP_addr, EXP_CONFIG) | (B00000001 << pin));
 	}
 	wire_TX(EXP_addr, EXP_CONFIG, a);
 }

@@ -77,6 +77,8 @@ class superpower {
 		
 		void set_AUX3(bool state);
 		void set_AUX5(bool state);
+		bool get_AUX3();
+		bool get_AUX5();
 		
 		void set_Charging(bool state);
 		
