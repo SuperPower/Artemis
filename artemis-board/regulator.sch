@@ -118,13 +118,13 @@ Wire Notes Line
 Wire Notes Line
 	10100 2300 5700 2300
 Text Notes 5750 2450 0    50   ~ 0
-3.3V Sensor Regulator\n
+3.3V auxillary Regulator\n
 Wire Notes Line
 	8200 4300 8200 6150
 Wire Notes Line
 	1200 6150 1200 4300
-Text Notes 1550 4450 0    50   ~ 0
-5V Sensor Regulator
+Text Notes 1250 4400 0    50   ~ 0
+5V auxillary Regulator
 Text HLabel 1100 1700 0    50   Input ~ 0
 INT
 Text HLabel 1100 850  0    50   Input ~ 0
@@ -217,8 +217,6 @@ Wire Wire Line
 	4150 3400 4150 3350
 Connection ~ 4150 3400
 Connection ~ 3600 3400
-Wire Wire Line
-	1750 3400 2000 3400
 Wire Wire Line
 	2150 3400 2150 3350
 Connection ~ 2150 3400
@@ -391,9 +389,6 @@ Wire Wire Line
 	6900 3050 7550 3050
 Wire Wire Line
 	2900 3000 3200 3000
-Connection ~ 2000 3400
-Wire Wire Line
-	2000 3400 2150 3400
 Wire Wire Line
 	3600 3400 3700 3400
 Wire Wire Line
@@ -406,21 +401,6 @@ Wire Wire Line
 Connection ~ 8100 3750
 Wire Wire Line
 	8100 3750 8500 3750
-Wire Wire Line
-	2000 3400 2000 3550
-$Comp
-L power:GND #PWR0132
-U 1 1 600F44E8
-P 2000 3800
-F 0 "#PWR0132" H 2000 3550 50  0001 C CNN
-F 1 "GND" H 2005 3627 50  0000 C CNN
-F 2 "" H 2000 3800 50  0001 C CNN
-F 3 "" H 2000 3800 50  0001 C CNN
-	1    2000 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2000 3800 2000 3750
 Wire Notes Line
 	1800 600  1800 2050
 Wire Notes Line
@@ -512,17 +492,6 @@ F 3 "~" H 9400 3300 50  0001 C CNN
 F 4 "C45783" H 9400 3300 50  0001 C CNN "LCSC"
 	1    9400 3300
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Jumper_NO_Small JP2
-U 1 1 600C2DE8
-P 2000 3650
-F 0 "JP2" V 2050 3500 50  0000 C CNN
-F 1 "RTC bypass" V 1950 3350 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2000 3650 50  0001 C CNN
-F 3 "~" H 2000 3650 50  0001 C CNN
-	1    2000 3650
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R17
@@ -858,4 +827,12 @@ Text Notes 4650 2200 0    50   ~ 0
 Alternative 3v3 regulators: C50936, C111686, C236673
 Wire Wire Line
 	4000 4900 4250 4900
+Text Notes 1250 6100 0    50   ~ 0
+max current over full battery voltage range: 500mA
+Text Notes 5750 4200 0    50   ~ 0
+max current 500mA\n(output voltage will drop below 3.3v if battery gets too low)\n(dropout of the regulator is 120mV/100mA)
+Text Notes 1250 4200 0    50   ~ 0
+max current 500mA\n(output voltage will drop below 3.3v if battery gets too low)\n(dropout of the regulator is 120mV/100mA)
+Wire Wire Line
+	1750 3400 2150 3400
 $EndSCHEMATC

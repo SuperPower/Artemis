@@ -543,4 +543,10 @@ F 4 "C22935" H 3400 3400 50  0001 C CNN "LCSC"
 	1    3400 3400
 	-1   0    0    1   
 $EndComp
+Text Notes 5100 3950 0    50   ~ 0
+Optional (if fuel gauge is not available)
+Wire Notes Line
+	5050 2450 5050 3950
+Wire Notes Line
+	5300 2200 6600 2200
 $EndSCHEMATC

@@ -511,32 +511,26 @@ $EndComp
 $Comp
 L power:GND #PWR0133
 U 1 1 601AEE17
-P 3500 4550
-F 0 "#PWR0133" H 3500 4300 50  0001 C CNN
-F 1 "GND" H 3505 4377 50  0000 C CNN
-F 2 "" H 3500 4550 50  0001 C CNN
-F 3 "" H 3500 4550 50  0001 C CNN
-	1    3500 4550
+P 3500 4900
+F 0 "#PWR0133" H 3500 4650 50  0001 C CNN
+F 1 "GND" H 3505 4727 50  0000 C CNN
+F 2 "" H 3500 4900 50  0001 C CNN
+F 3 "" H 3500 4900 50  0001 C CNN
+	1    3500 4900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3500 4550 3500 4500
 Wire Wire Line
 	3400 4500 3500 4500
 Text Label 2800 4500 0    50   ~ 0
 INT
 Wire Wire Line
-	3000 4500 2800 4500
-Text Notes 2900 4700 0    50   ~ 0
-INT trigger
+	3000 4500 2950 4500
+Text Notes 2550 5450 0    50   ~ 0
+INT trigger\n(manually wakes the board)
 Wire Notes Line
 	2500 4100 3700 4100
 Wire Notes Line
-	3700 4100 3700 5000
-Wire Notes Line
-	3700 5000 2500 5000
-Wire Notes Line
-	2500 5000 2500 4100
+	3700 5500 2500 5500
 Wire Notes Line
 	2350 600  2350 2100
 Wire Notes Line
@@ -550,7 +544,7 @@ VBAT
 Text Notes 2300 7200 0    50   ~ 0
 Pullups can be swapped for lower value if needed
 Text Notes 4450 6450 0    50   ~ 0
-!!!make sure the connected I2C devices don't\nhave internal pull-ups. Overwise they may cause\nhigh quiecent current and problems with the\nonboard communication if those are\nconnected to the AUX 3v3 and 5v pins!!!
+!!!make sure the connected I2C devices don't\nhave internal pull-ups. Overwise they may cause\nhigh quiecent current and problems with the\nonboard communication!!!
 Text Label 2900 6950 0    50   ~ 0
 3v3_I2C
 Text Notes 2250 6150 0    50   ~ 0
@@ -678,4 +672,35 @@ Text Label 1550 1250 0    50   ~ 0
 3v3_I2C
 Wire Wire Line
 	4550 5300 5300 5300
+$Comp
+L Device:Jumper_NO_Small JP?
+U 1 1 60B74E13
+P 3200 4850
+AR Path="/5F63A0E9/60B74E13" Ref="JP?"  Part="1" 
+AR Path="/5F639F48/60B74E13" Ref="JP2"  Part="1" 
+F 0 "JP2" H 3200 4750 50  0000 C CNN
+F 1 "RTC bypass" H 3150 4650 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3200 4850 50  0001 C CNN
+F 3 "~" H 3200 4850 50  0001 C CNN
+	1    3200 4850
+	-1   0    0    1   
+$EndComp
+Wire Notes Line
+	3700 4100 3700 5500
+Wire Wire Line
+	3500 4850 3500 4900
+Wire Wire Line
+	3300 4850 3500 4850
+Wire Wire Line
+	3500 4500 3500 4850
+Connection ~ 3500 4850
+Wire Wire Line
+	3100 4850 2950 4850
+Wire Wire Line
+	2950 4850 2950 4500
+Connection ~ 2950 4500
+Wire Wire Line
+	2950 4500 2800 4500
+Wire Notes Line
+	2500 4100 2500 5500
 $EndSCHEMATC

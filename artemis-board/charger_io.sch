@@ -34,14 +34,14 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x02_Male J4
 U 1 1 5F7CE401
-P 5600 3000
-F 0 "J4" H 5708 3181 50  0000 C CNN
-F 1 "Solar in" H 5708 3090 50  0000 C CNN
-F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" H 5600 3000 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1811051822_JST-Sales-America-S2B-XH-A-LF-SN_C157931.pdf" H 5600 3000 50  0001 C CNN
-F 4 "C157931" H 5600 3000 50  0001 C CNN "LCSC"
-	1    5600 3000
-	-1   0    0    -1  
+P 5600 3100
+F 0 "J4" H 5750 2800 50  0000 C CNN
+F 1 "Solar in" H 5700 2900 50  0000 C CNN
+F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" H 5600 3100 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1811051822_JST-Sales-America-S2B-XH-A-LF-SN_C157931.pdf" H 5600 3100 50  0001 C CNN
+F 4 "C157931" H 5600 3100 50  0001 C CNN "LCSC"
+	1    5600 3100
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR0123
@@ -225,4 +225,6 @@ Wire Wire Line
 	4400 4550 4700 4550
 NoConn ~ 4400 4650
 NoConn ~ 3550 4650
+Text Notes 4450 4750 0    50   ~ 0
+Optional USB ESD protection IC
 $EndSCHEMATC
