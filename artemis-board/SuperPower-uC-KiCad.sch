@@ -232,8 +232,9 @@ U 1 1 60096DD5
 P 9500 3450
 F 0 "J8" H 9550 3500 50  0000 L CNN
 F 1 "regulator board" H 9550 3400 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x13_P2.54mm_Vertical" H 9500 3450 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x13_P2.54mm_Vertical" H 9500 3450 50  0001 C CNN
 F 3 "~" H 9500 3450 50  0001 C CNN
+F 4 "C52709 " H 9500 3450 50  0001 C CNN "LCSC"
 	1    9500 3450
 	1    0    0    -1  
 $EndComp
@@ -262,6 +263,7 @@ F 0 "H1" H 8150 5996 50  0000 L CNN
 F 1 "MountingHole" H 8150 5905 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.7mm_M2.5_ISO7380" H 8050 5950 50  0001 C CNN
 F 3 "~" H 8050 5950 50  0001 C CNN
+F 4 "DNP" H 8050 5950 50  0001 C CNN "DNP"
 	1    8050 5950
 	1    0    0    -1  
 $EndComp
@@ -273,6 +275,7 @@ F 0 "H3" H 8150 5796 50  0000 L CNN
 F 1 "MountingHole" H 8150 5705 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.7mm_M2.5_ISO7380" H 8050 5750 50  0001 C CNN
 F 3 "~" H 8050 5750 50  0001 C CNN
+F 4 "DNP" H 8050 5750 50  0001 C CNN "DNP"
 	1    8050 5750
 	1    0    0    -1  
 $EndComp
@@ -284,6 +287,7 @@ F 0 "H5" H 7400 5996 50  0000 L CNN
 F 1 "MountingHole" H 7400 5905 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.7mm_M2.5_ISO7380" H 7300 5950 50  0001 C CNN
 F 3 "~" H 7300 5950 50  0001 C CNN
+F 4 "DNP" H 7300 5950 50  0001 C CNN "DNP"
 	1    7300 5950
 	1    0    0    -1  
 $EndComp
@@ -295,6 +299,7 @@ F 0 "H6" H 7400 5796 50  0000 L CNN
 F 1 "MountingHole" H 7400 5705 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.7mm_M2.5_ISO7380" H 7300 5750 50  0001 C CNN
 F 3 "~" H 7300 5750 50  0001 C CNN
+F 4 "DNP" H 7300 5750 50  0001 C CNN "DNP"
 	1    7300 5750
 	1    0    0    -1  
 $EndComp
