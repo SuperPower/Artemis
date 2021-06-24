@@ -182,7 +182,7 @@ VBAT
 Wire Wire Line
 	8950 3050 9400 3050
 Wire Wire Line
-	5950 3550 6400 3550
+	5950 3550 6300 3550
 Wire Notes Line
 	600  600  1800 600 
 Wire Notes Line
@@ -327,7 +327,7 @@ Connection ~ 2050 5200
 Wire Wire Line
 	1600 5200 2050 5200
 Wire Wire Line
-	1350 5400 1750 5400
+	1350 5400 1650 5400
 Wire Wire Line
 	2950 5600 3300 5600
 Connection ~ 2950 5600
@@ -835,4 +835,52 @@ Text Notes 1250 4200 0    50   ~ 0
 max current 500mA\n(output voltage will drop below 3.3v if battery gets too low)\n(dropout of the regulator is 120mV/100mA)
 Wire Wire Line
 	1750 3400 2150 3400
+$Comp
+L Device:R R?
+U 1 1 60D6827B
+P 6500 3750
+AR Path="/5F639F48/60D6827B" Ref="R?"  Part="1" 
+AR Path="/5F63A0E9/60D6827B" Ref="R24"  Part="1" 
+F 0 "R24" V 6400 3600 50  0000 L CNN
+F 1 "1M" V 6400 3800 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6430 3750 50  0001 C CNN
+F 3 "~" H 6500 3750 50  0001 C CNN
+F 4 "C22935" H 6500 3750 50  0001 C CNN "LCSC"
+	1    6500 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60D6B03E
+P 1850 5600
+AR Path="/5F639F48/60D6B03E" Ref="R?"  Part="1" 
+AR Path="/5F63A0E9/60D6B03E" Ref="R25"  Part="1" 
+F 0 "R25" V 1750 5450 50  0000 L CNN
+F 1 "1M" V 1750 5650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1780 5600 50  0001 C CNN
+F 3 "~" H 1850 5600 50  0001 C CNN
+F 4 "C22935" H 1850 5600 50  0001 C CNN "LCSC"
+	1    1850 5600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2000 5600 2050 5600
+Connection ~ 2050 5600
+Wire Wire Line
+	1700 5600 1650 5600
+Wire Wire Line
+	1650 5600 1650 5400
+Connection ~ 1650 5400
+Wire Wire Line
+	1650 5400 1750 5400
+Wire Wire Line
+	6350 3750 6300 3750
+Wire Wire Line
+	6300 3750 6300 3550
+Connection ~ 6300 3550
+Wire Wire Line
+	6300 3550 6400 3550
+Wire Wire Line
+	6650 3750 6700 3750
+Connection ~ 6700 3750
 $EndSCHEMATC

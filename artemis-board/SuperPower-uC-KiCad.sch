@@ -86,7 +86,7 @@ IO Expander
 Text Notes 3400 2600 0    50   ~ 0
 I2C pullup
 Wire Wire Line
-	6650 4600 6650 2750
+	6650 4600 6650 3850
 Wire Wire Line
 	6150 4600 6650 4600
 Wire Wire Line
@@ -94,7 +94,7 @@ Wire Wire Line
 Wire Wire Line
 	6150 2900 6600 2900
 Wire Wire Line
-	6600 2900 6600 4500
+	6600 2900 6600 3450
 Wire Wire Line
 	6600 4500 6150 4500
 Wire Wire Line
@@ -303,7 +303,6 @@ F 4 "DNP" H 7300 5750 50  0001 C CNN "DNP"
 	1    7300 5750
 	1    0    0    -1  
 $EndComp
-NoConn ~ 9300 3450
 Wire Wire Line
 	4600 4350 4900 4350
 Wire Wire Line
@@ -318,10 +317,49 @@ Connection ~ 4800 2200
 Wire Wire Line
 	4800 2200 4900 2200
 Wire Wire Line
-	6150 4750 8350 4750
-Wire Wire Line
-	8350 4750 8350 3650
-Wire Wire Line
-	8350 3650 9300 3650
+	6150 4750 8200 4750
 NoConn ~ 9300 4050
+$Comp
+L Device:Jumper_NO_Small JP4
+U 1 1 60D487D3
+P 8000 3450
+F 0 "JP4" H 8000 3635 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 8000 3544 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8000 3450 50  0001 C CNN
+F 3 "~" H 8000 3450 50  0001 C CNN
+	1    8000 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Open JP?
+U 1 1 60D4D872
+P 8000 3850
+AR Path="/5F63B107/60D4D872" Ref="JP?"  Part="1" 
+AR Path="/60D4D872" Ref="JP3"  Part="1" 
+F 0 "JP3" H 7850 3800 50  0000 C CNN
+F 1 "jumper" H 8050 3950 50  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 8000 3850 50  0001 C CNN
+F 3 "~" H 8000 3850 50  0001 C CNN
+F 4 "DNP" H 8000 3850 50  0001 C CNN "DNP"
+	1    8000 3850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8200 3850 8200 4750
+Wire Wire Line
+	8000 3650 8000 3700
+Wire Wire Line
+	8000 3650 9300 3650
+Wire Wire Line
+	9300 3450 8100 3450
+Wire Wire Line
+	7900 3450 6600 3450
+Connection ~ 6600 3450
+Wire Wire Line
+	6600 3450 6600 4500
+Wire Wire Line
+	7800 3850 6650 3850
+Connection ~ 6650 3850
+Wire Wire Line
+	6650 3850 6650 2750
 $EndSCHEMATC
