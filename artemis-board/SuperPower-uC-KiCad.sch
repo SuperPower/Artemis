@@ -324,7 +324,7 @@ L Device:Jumper_NO_Small JP4
 U 1 1 60D487D3
 P 8000 3450
 F 0 "JP4" H 8000 3635 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 8000 3544 50  0000 C CNN
+F 1 "Jumper 5v enable" H 8000 3544 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8000 3450 50  0001 C CNN
 F 3 "~" H 8000 3450 50  0001 C CNN
 	1    8000 3450
@@ -362,4 +362,8 @@ Wire Wire Line
 Connection ~ 6650 3850
 Wire Wire Line
 	6650 3850 6650 2750
+Text Notes 6700 3150 0    50   ~ 0
+use JP4 only if IO expander is not populated
+Text Notes 6950 4950 0    50   ~ 0
+JP3 position 1 for voltage measuring (requires io expander)\nposition 3 only if IO expander is not populated
 $EndSCHEMATC
