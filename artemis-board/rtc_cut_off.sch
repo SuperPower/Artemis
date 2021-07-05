@@ -549,4 +549,6 @@ Wire Notes Line
 	5050 2450 5050 3950
 Wire Notes Line
 	5300 2200 6600 2200
+Text Notes 3300 1300 0    50   ~ 0
+!!!do not use the Q1 version as it does not support Vbat voltage levels on Vccp pin!!!
 $EndSCHEMATC
