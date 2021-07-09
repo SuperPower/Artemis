@@ -166,7 +166,7 @@ Wire Notes Line
 Text HLabel 850  1050 0    50   BiDi ~ 0
 VBAT
 Wire Wire Line
-	3850 3250 4100 3250
+	3400 3250 3650 3250
 Text Notes 600  650  0    50   ~ 0
 Labels\n
 $Comp
@@ -198,19 +198,6 @@ $EndComp
 Connection ~ 4750 3250
 Wire Wire Line
 	4750 3250 4550 3250
-$Comp
-L Connector:Conn_01x02_Male J7
-U 1 1 600973F8
-P 6800 2550
-F 0 "J7" H 6700 2500 50  0000 C CNN
-F 1 "unprotected BAT in" H 6900 2700 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6800 2550 50  0001 C CNN
-F 3 "" H 6800 2550 50  0001 C CNN
-F 4 "" H 6800 2550 50  0001 C CNN "LCSC"
-F 5 "DNP" H 6800 2550 50  0001 C CNN "DNP"
-	1    6800 2550
-	1    0    0    -1  
-$EndComp
 Text Label 3850 3550 0    50   ~ 0
 BAT-
 Text Label 7250 3250 2    50   ~ 0
@@ -236,12 +223,8 @@ Text Notes 5650 2300 0    50   ~ 0
 This connector bypasses the Protection if needed
 Text Label 7250 3150 2    50   ~ 0
 BAT+
-Text Label 3850 3250 0    50   ~ 0
+Text Label 3400 3250 0    50   ~ 0
 BAT+
-Text Label 7250 2550 2    50   ~ 0
-BAT+
-Wire Wire Line
-	7000 2550 7250 2550
 Text Label 1100 1050 2    50   ~ 0
 BAT+
 Wire Wire Line
@@ -273,4 +256,32 @@ F 3 "" H 6950 4200 50  0001 C CNN
 $EndComp
 Text Label 6950 3900 0    50   ~ 0
 BAT+
+$Comp
+L Jumper:Jumper_2_Open JP5
+U 1 1 60E838B6
+P 6800 2650
+F 0 "JP5" H 6800 2793 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6800 2794 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6800 2650 50  0001 C CNN
+F 3 "~" H 6800 2650 50  0001 C CNN
+	1    6800 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Bridged JP6
+U 1 1 60E8440E
+P 3850 3250
+F 0 "JP6" H 3850 3353 50  0000 C CNN
+F 1 "Jumper_2_Bridged" H 3850 3354 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 3850 3250 50  0001 C CNN
+F 3 "~" H 3850 3250 50  0001 C CNN
+	1    3850 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2650 6350 2650
+Text Label 6350 2650 0    50   ~ 0
+BAT-
+Wire Wire Line
+	4050 3250 4100 3250
 $EndSCHEMATC
