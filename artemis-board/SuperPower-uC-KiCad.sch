@@ -327,6 +327,7 @@ F 0 "JP4" H 8000 3635 50  0000 C CNN
 F 1 "Jumper 5v enable" H 8000 3544 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8000 3450 50  0001 C CNN
 F 3 "~" H 8000 3450 50  0001 C CNN
+F 4 "DNP" H 8000 3450 50  0001 C CNN "DNP"
 	1    8000 3450
 	1    0    0    -1  
 $EndComp

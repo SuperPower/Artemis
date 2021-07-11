@@ -19,7 +19,7 @@ U 1 1 5F7C508D
 P 5350 3350
 F 0 "U1" H 5350 2885 50  0000 C CNN
 F 1 "FS312F-G" H 5350 2976 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 5450 3800 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5450 3800 50  0001 C CNN
 F 3 "https://www.ic-fortune.com/upload/Download/FS312F-G-DS-12_EN.pdf" H 5350 3100 50  0001 C CNN
 F 4 "C82736" H 5350 3350 50  0001 C CNN "LCSC"
 	1    5350 3350
@@ -264,6 +264,7 @@ F 0 "JP5" H 6800 2793 50  0000 C CNN
 F 1 "Jumper_2_Open" H 6800 2794 50  0001 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6800 2650 50  0001 C CNN
 F 3 "~" H 6800 2650 50  0001 C CNN
+F 4 "DNP" H 6800 2650 50  0001 C CNN "DNP"
 	1    6800 2650
 	1    0    0    -1  
 $EndComp
@@ -275,6 +276,7 @@ F 0 "JP6" H 3850 3353 50  0000 C CNN
 F 1 "Jumper_2_Bridged" H 3850 3354 50  0001 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 3850 3250 50  0001 C CNN
 F 3 "~" H 3850 3250 50  0001 C CNN
+F 4 "DNP" H 3850 3250 50  0001 C CNN "DNP"
 	1    3850 3250
 	1    0    0    -1  
 $EndComp
