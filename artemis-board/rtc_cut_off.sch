@@ -420,8 +420,6 @@ Wire Notes Line
 	4550 2450 4550 3950
 Wire Notes Line
 	4900 2200 6200 2200
-Text Notes 3300 1300 0    50   ~ 0
-!!!do not use the Q1 version as it does not support Vbat voltage levels on Vccp pin!!!
 Connection ~ 5700 2350
 Wire Wire Line
 	5250 2350 5700 2350
