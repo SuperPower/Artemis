@@ -19,7 +19,7 @@ U 1 1 5F832323
 P 7250 3200
 F 0 "R7" H 7100 3150 50  0000 L CNN
 F 1 "1M" H 7100 3250 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7180 3200 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 7180 3200 50  0001 C CNN
 F 3 "~" H 7250 3200 50  0001 C CNN
 F 4 "C22935" H 7250 3200 50  0001 C CNN "LCSC"
 	1    7250 3200
@@ -46,7 +46,7 @@ U 1 1 5F837984
 P 7250 2800
 F 0 "C4" H 7350 2850 50  0000 L CNN
 F 1 "1µF" H 7350 2750 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7288 2650 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7288 2650 50  0001 C CNN
 F 3 "~" H 7250 2800 50  0001 C CNN
 F 4 "C15849" H 7250 2800 50  0001 C CNN "LCSC"
 	1    7250 2800
@@ -63,7 +63,7 @@ U 1 1 5F7FD127
 P 4500 4550
 F 0 "C3" H 4600 4600 50  0000 L CNN
 F 1 "1µF" H 4600 4500 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4538 4400 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4538 4400 50  0001 C CNN
 F 3 "~" H 4500 4550 50  0001 C CNN
 F 4 "C15849" H 4500 4550 50  0001 C CNN "LCSC"
 	1    4500 4550
@@ -286,6 +286,7 @@ F 0 "TP4" H 6200 5100 50  0000 L CNN
 F 1 "TestPoint" H 6050 5250 50  0001 L CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 6550 5050 50  0001 C CNN
 F 3 "~" H 6550 5050 50  0001 C CNN
+F 4 "DNP" H 6350 5050 50  0001 C CNN "DNP"
 	1    6350 5050
 	1    0    0    -1  
 $EndComp
@@ -331,7 +332,7 @@ L LC709203FQH:LC709203FQH U3
 U 1 1 5F7E175C
 P 4200 2750
 F 0 "U3" H 4200 3125 50  0000 C CNN
-F 1 "LC709203FQH" H 4200 3034 50  0000 C CNN
+F 1 "LC709203FQH-01TWG" H 4200 3034 50  0000 C CNN
 F 2 "Package_DFN_QFN:WDFN-8-1EP_4x3mm_P0.65mm_EP2.4x1.8mm" H 4250 2500 50  0001 C CNN
 F 3 "https://www.onsemi.com/pub/Collateral/LC709203F-D.PDF" H 4200 2800 50  0001 C CNN
 F 4 "C152311" H 4200 2750 50  0001 C CNN "LCSC"
@@ -418,38 +419,18 @@ F 3 "" H 4650 3600 50  0001 C CNN
 $EndComp
 $Comp
 L Device:R R?
-U 1 1 5FD8F02D
+U 1 1 5FD924F7
 P 4550 5450
-AR Path="/5F639CFE/5FD8F02D" Ref="R?"  Part="1" 
-AR Path="/5F639F48/5FD8F02D" Ref="R5"  Part="1" 
-F 0 "R5" H 4620 5496 50  0000 L CNN
-F 1 "1k" H 4620 5405 50  0000 L CNN
+AR Path="/5F639CFE/5FD924F7" Ref="R?"  Part="1" 
+AR Path="/5F639F48/5FD924F7" Ref="R22"  Part="1" 
+F 0 "R22" H 4620 5496 50  0000 L CNN
+F 1 "2.4k" H 4620 5405 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4480 5450 50  0001 C CNN
 F 3 "~" H 4550 5450 50  0001 C CNN
-F 4 "C21190" H 4550 5450 50  0001 C CNN "LCSC"
+F 4 "C22940" H 4550 5450 50  0001 C CNN "LCSC"
 	1    4550 5450
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R?
-U 1 1 5FD924F7
-P 4550 5150
-AR Path="/5F639CFE/5FD924F7" Ref="R?"  Part="1" 
-AR Path="/5F639F48/5FD924F7" Ref="R22"  Part="1" 
-F 0 "R22" H 4620 5196 50  0000 L CNN
-F 1 "1k" H 4620 5105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4480 5150 50  0001 C CNN
-F 3 "~" H 4550 5150 50  0001 C CNN
-F 4 "C21190" H 4550 5150 50  0001 C CNN "LCSC"
-	1    4550 5150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5300 5300 5250 5300
-Wire Wire Line
-	5250 5300 5250 5000
-Wire Wire Line
-	5250 5000 4550 5000
 $Comp
 L Device:D_Schottky D?
 U 1 1 5FCDC977
@@ -460,7 +441,7 @@ F 0 "D3" H 7100 2983 50  0000 C CNN
 F 1 "B5819W" H 7100 3074 50  0000 C CNN
 F 2 "Diode_SMD:D_SOD-123" H 7100 3200 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Changjiang-Electronics-Tech-CJ-B5819W_C8598.pdf" H 7100 3200 50  0001 C CNN
-F 4 " C8598" H 7100 3200 50  0001 C CNN "LCSC"
+F 4 "C8598" H 7100 3200 50  0001 C CNN "LCSC"
 	1    7100 3200
 	0    1    1    0   
 $EndComp
@@ -496,6 +477,7 @@ F 1 "External NTC" H 3700 3300 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4000 3300 50  0001 C CNN
 F 3 "" H 4000 3300 50  0001 C CNN
 F 4 "" H 4000 3300 50  0001 C CNN "LCSC"
+F 5 "DNP" H 4000 3300 50  0001 C CNN "DNP"
 	1    4000 3300
 	1    0    0    1   
 $EndComp
@@ -524,39 +506,33 @@ F 0 "SW2" H 3200 4735 50  0000 C CNN
 F 1 "SKRKAEE020" H 3200 4644 50  0000 C CNN
 F 2 "Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK" H 3200 4500 50  0001 C CNN
 F 3 "~" H 3200 4500 50  0001 C CNN
-F 4 "C231329" H 3200 4500 50  0001 C CNN "LCSC"
+F 4 "C115357" H 3200 4500 50  0001 C CNN "LCSC"
 	1    3200 4500
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0133
 U 1 1 601AEE17
-P 3500 4550
-F 0 "#PWR0133" H 3500 4300 50  0001 C CNN
-F 1 "GND" H 3505 4377 50  0000 C CNN
-F 2 "" H 3500 4550 50  0001 C CNN
-F 3 "" H 3500 4550 50  0001 C CNN
-	1    3500 4550
+P 3500 4900
+F 0 "#PWR0133" H 3500 4650 50  0001 C CNN
+F 1 "GND" H 3505 4727 50  0000 C CNN
+F 2 "" H 3500 4900 50  0001 C CNN
+F 3 "" H 3500 4900 50  0001 C CNN
+	1    3500 4900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3500 4550 3500 4500
 Wire Wire Line
 	3400 4500 3500 4500
 Text Label 2800 4500 0    50   ~ 0
 INT
 Wire Wire Line
-	3000 4500 2800 4500
-Text Notes 2900 4700 0    50   ~ 0
-INT trigger
+	3000 4500 2950 4500
+Text Notes 2550 5450 0    50   ~ 0
+INT trigger\n(manually wakes the board)
 Wire Notes Line
 	2500 4100 3700 4100
 Wire Notes Line
-	3700 4100 3700 5000
-Wire Notes Line
-	3700 5000 2500 5000
-Wire Notes Line
-	2500 5000 2500 4100
+	3700 5500 2500 5500
 Wire Notes Line
 	2350 600  2350 2100
 Wire Notes Line
@@ -570,19 +546,15 @@ VBAT
 Text Notes 2300 7200 0    50   ~ 0
 Pullups can be swapped for lower value if needed
 Text Notes 4450 6450 0    50   ~ 0
-!!!make sure the connected I2C devices don't\nhave internal pull-ups. Overwise they may cause\nhigh quiecent current and problems with the\nonboard communication if those are\nconnected to the AUX 3v3 and 5v pins!!!
+!!!make sure the connected I2C devices don't\nhave internal pull-ups. Overwise they may cause\nhigh quiecent current and problems with the\nonboard communication!!!
 Text Label 2900 6950 0    50   ~ 0
 3v3_I2C
 Text Notes 2250 6150 0    50   ~ 0
 I2C pullup\n
 Wire Notes Line
-	2250 7250 4350 7250
-Wire Notes Line
-	2250 7250 2250 6050
+	2000 7250 2000 6050
 Wire Notes Line
 	4350 6050 4350 7250
-Wire Notes Line
-	2250 6050 4350 6050
 Wire Wire Line
 	3650 6550 3900 6550
 Text Label 3900 6550 2    50   ~ 0
@@ -596,19 +568,19 @@ SCL
 Text Label 4100 6850 2    50   ~ 0
 SDA
 Wire Wire Line
-	2800 6550 2550 6550
+	2800 6550 2700 6550
 $Comp
 L power:GND #PWR?
 U 1 1 6026DD90
-P 2550 6550
+P 2250 6550
 AR Path="/5F63A00B/6026DD90" Ref="#PWR?"  Part="1" 
 AR Path="/5F63A0E9/6026DD90" Ref="#PWR?"  Part="1" 
 AR Path="/5F639F48/6026DD90" Ref="#PWR0108"  Part="1" 
-F 0 "#PWR0108" H 2550 6300 50  0001 C CNN
-F 1 "GND" H 2555 6377 50  0000 C CNN
-F 2 "" H 2550 6550 50  0001 C CNN
-F 3 "" H 2550 6550 50  0001 C CNN
-	1    2550 6550
+F 0 "#PWR0108" H 2250 6300 50  0001 C CNN
+F 1 "GND" H 2255 6377 50  0000 C CNN
+F 2 "" H 2250 6550 50  0001 C CNN
+F 3 "" H 2250 6550 50  0001 C CNN
+	1    2250 6550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -684,7 +656,7 @@ AR Path="/5F63A0E9/6026DDB7" Ref="U?"  Part="1"
 AR Path="/5F639F48/6026DDB7" Ref="U8"  Part="1" 
 F 0 "U8" H 3300 6665 50  0000 C CNN
 F 1 "XC6206P332MR" H 3300 6574 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 3350 6100 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3350 6100 50  0001 C CNN
 F 3 "https://www.torexsemi.com/file/xc6206/XC6206.pdf" H 3500 6450 50  0001 C CNN
 F 4 "C5446" H 3300 6450 50  0001 C CNN "LCSC"
 	1    3300 6450
@@ -696,4 +668,158 @@ Wire Wire Line
 	1450 1250 1550 1250
 Text Label 1550 1250 0    50   ~ 0
 3v3_I2C
+Wire Wire Line
+	4550 5300 5300 5300
+$Comp
+L Device:Jumper_NO_Small JP?
+U 1 1 60B74E13
+P 3200 4850
+AR Path="/5F63A0E9/60B74E13" Ref="JP?"  Part="1" 
+AR Path="/5F639F48/60B74E13" Ref="JP2"  Part="1" 
+F 0 "JP2" H 3200 4750 50  0000 C CNN
+F 1 "RTC bypass" H 3150 4650 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3200 4850 50  0001 C CNN
+F 3 "~" H 3200 4850 50  0001 C CNN
+F 4 "DNP" H 3200 4850 50  0001 C CNN "DNP"
+	1    3200 4850
+	-1   0    0    1   
+$EndComp
+Wire Notes Line
+	3700 4100 3700 5500
+Wire Wire Line
+	3500 4850 3500 4900
+Wire Wire Line
+	3300 4850 3500 4850
+Wire Wire Line
+	3500 4500 3500 4850
+Connection ~ 3500 4850
+Wire Wire Line
+	3100 4850 2950 4850
+Wire Wire Line
+	2950 4850 2950 4500
+Connection ~ 2950 4500
+Wire Wire Line
+	2950 4500 2800 4500
+Wire Notes Line
+	2500 4100 2500 5500
+$Comp
+L Device:C C27
+U 1 1 60B69250
+P 2700 6400
+F 0 "C27" H 2800 6450 50  0000 L CNN
+F 1 "1µF" H 2800 6350 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2738 6250 50  0001 C CNN
+F 3 "~" H 2700 6400 50  0001 C CNN
+F 4 "C15849" H 2700 6400 50  0001 C CNN "LCSC"
+	1    2700 6400
+	1    0    0    -1  
+$EndComp
+Connection ~ 2700 6550
+Wire Wire Line
+	2700 6550 2450 6550
+Wire Wire Line
+	2700 6250 2950 6250
+Text Label 2950 6250 2    50   ~ 0
+VBAT
+$Comp
+L Device:C C5
+U 1 1 60EBFB71
+P 2450 6750
+F 0 "C5" H 2550 6800 50  0000 L CNN
+F 1 "1µF" H 2550 6700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2488 6600 50  0001 C CNN
+F 3 "~" H 2450 6750 50  0001 C CNN
+F 4 "C15849" H 2450 6750 50  0001 C CNN "LCSC"
+	1    2450 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 6600 2450 6550
+Connection ~ 2450 6550
+Wire Wire Line
+	2450 6550 2250 6550
+Wire Wire Line
+	2450 6900 2450 6950
+Wire Wire Line
+	2450 6950 2800 6950
+Connection ~ 2800 6950
+Wire Notes Line
+	2000 7250 4350 7250
+Wire Notes Line
+	2000 6050 4350 6050
+$Comp
+L LC709203FQH:LC709203FXE U13
+U 1 1 61073159
+P 4400 1550
+F 0 "U13" H 4400 2181 50  0000 C CNN
+F 1 "LC709203FXE" H 4400 2090 50  0000 C CNN
+F 2 "Package_CSP:WLCSP-9_3x3_1.76x1.6mm" H 4400 2150 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/LC709203F-D.PDF" H 4400 2150 50  0001 C CNN
+F 4 "DNP" H 4400 1550 50  0001 C CNN "DNP"
+F 5 "C184366" H 4400 1550 50  0001 C CNN "LCSC"
+	1    4400 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 6107483E
+P 4400 1800
+F 0 "#PWR0120" H 4400 1550 50  0001 C CNN
+F 1 "GND" H 4405 1627 50  0000 C CNN
+F 2 "" H 4400 1800 50  0001 C CNN
+F 3 "" H 4400 1800 50  0001 C CNN
+	1    4400 1800
+	1    0    0    -1  
+$EndComp
+Text Label 4400 1100 0    50   ~ 0
+VBAT
+Text Label 3900 1600 2    50   ~ 0
+SCL
+Text Label 3900 1500 2    50   ~ 0
+SDA
+$Comp
+L power:GND #PWR0121
+U 1 1 610782C0
+P 4500 1800
+F 0 "#PWR0121" H 4500 1550 50  0001 C CNN
+F 1 "GND" H 4505 1627 50  0000 C CNN
+F 2 "" H 4500 1800 50  0001 C CNN
+F 3 "" H 4500 1800 50  0001 C CNN
+	1    4500 1800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3900 1300
+Text Label 4700 2800 0    50   ~ 0
+T1
+Text Label 4650 2900 0    50   ~ 0
+T2
+Text Label 4900 1400 0    50   ~ 0
+T2
+Text Label 4900 1300 0    50   ~ 0
+T1
+$Comp
+L Device:C C29
+U 1 1 6108341B
+P 5200 1250
+F 0 "C29" H 5200 1350 50  0000 L CNN
+F 1 "0.1µF" H 5200 1150 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5238 1100 50  0001 C CNN
+F 3 "~" H 5200 1250 50  0001 C CNN
+F 4 "C14858" H 5200 1250 50  0001 C CNN "LCSC"
+	1    5200 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 1100 4400 1100
+$Comp
+L power:GND #PWR?
+U 1 1 6108AFC4
+P 5200 1400
+F 0 "#PWR?" H 5200 1150 50  0001 C CNN
+F 1 "GND" H 5205 1227 50  0000 C CNN
+F 2 "" H 5200 1400 50  0001 C CNN
+F 3 "" H 5200 1400 50  0001 C CNN
+	1    5200 1400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

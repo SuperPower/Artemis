@@ -18,10 +18,10 @@ L FS312F-G:FS312F-G U1
 U 1 1 5F7C508D
 P 5350 3350
 F 0 "U1" H 5350 2885 50  0000 C CNN
-F 1 "AP9101CK6-ADTRG1" H 5350 2976 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 5450 3800 50  0001 C CNN
-F 3 "https://www.diodes.com/assets/Datasheets/AP9101C.pdf" H 5350 3100 50  0001 C CNN
-F 4 "C151339" H 5350 3350 50  0001 C CNN "LCSC"
+F 1 "FS312F-G" H 5350 2976 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5450 3800 50  0001 C CNN
+F 3 "https://www.ic-fortune.com/upload/Download/FS312F-G-DS-12_EN.pdf" H 5350 3100 50  0001 C CNN
+F 4 "C82736" H 5350 3350 50  0001 C CNN "LCSC"
 	1    5350 3350
 	-1   0    0    1   
 $EndComp
@@ -166,7 +166,7 @@ Wire Notes Line
 Text HLabel 850  1050 0    50   BiDi ~ 0
 VBAT
 Wire Wire Line
-	3850 3250 4100 3250
+	3400 3250 3650 3250
 Text Notes 600  650  0    50   ~ 0
 Labels\n
 $Comp
@@ -198,18 +198,6 @@ $EndComp
 Connection ~ 4750 3250
 Wire Wire Line
 	4750 3250 4550 3250
-$Comp
-L Connector:Conn_01x02_Male J7
-U 1 1 600973F8
-P 6800 2550
-F 0 "J7" H 6700 2500 50  0000 C CNN
-F 1 "DNP" H 6900 2700 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6800 2550 50  0001 C CNN
-F 3 "" H 6800 2550 50  0001 C CNN
-F 4 "" H 6800 2550 50  0001 C CNN "LCSC"
-	1    6800 2550
-	1    0    0    -1  
-$EndComp
 Text Label 3850 3550 0    50   ~ 0
 BAT-
 Text Label 7250 3250 2    50   ~ 0
@@ -235,14 +223,67 @@ Text Notes 5650 2300 0    50   ~ 0
 This connector bypasses the Protection if needed
 Text Label 7250 3150 2    50   ~ 0
 BAT+
-Text Label 3850 3250 0    50   ~ 0
+Text Label 3400 3250 0    50   ~ 0
 BAT+
-Text Label 7250 2550 2    50   ~ 0
-BAT+
-Wire Wire Line
-	7000 2550 7250 2550
 Text Label 1100 1050 2    50   ~ 0
 BAT+
 Wire Wire Line
 	1100 1050 850  1050
+$Comp
+L Device:C C?
+U 1 1 60BF8CBC
+P 6950 4050
+AR Path="/5F63A0E9/60BF8CBC" Ref="C?"  Part="1" 
+AR Path="/5F639CFE/60BF8CBC" Ref="C28"  Part="1" 
+F 0 "C28" H 7065 4096 50  0000 L CNN
+F 1 "22µF" H 7065 4005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6988 3900 50  0001 C CNN
+F 3 "~" H 6950 4050 50  0001 C CNN
+F 4 "C45783" H 6950 4050 50  0001 C CNN "LCSC"
+	1    6950 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 60BF9399
+P 6950 4200
+F 0 "#PWR0117" H 6950 3950 50  0001 C CNN
+F 1 "GND" H 6955 4027 50  0000 C CNN
+F 2 "" H 6950 4200 50  0001 C CNN
+F 3 "" H 6950 4200 50  0001 C CNN
+	1    6950 4200
+	1    0    0    -1  
+$EndComp
+Text Label 6950 3900 0    50   ~ 0
+BAT+
+$Comp
+L Jumper:Jumper_2_Open JP5
+U 1 1 60E838B6
+P 6800 2650
+F 0 "JP5" H 6800 2793 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6800 2794 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6800 2650 50  0001 C CNN
+F 3 "~" H 6800 2650 50  0001 C CNN
+F 4 "DNP" H 6800 2650 50  0001 C CNN "DNP"
+	1    6800 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Bridged JP6
+U 1 1 60E8440E
+P 3850 3250
+F 0 "JP6" H 3850 3353 50  0000 C CNN
+F 1 "Jumper_2_Bridged" H 3850 3354 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 3850 3250 50  0001 C CNN
+F 3 "~" H 3850 3250 50  0001 C CNN
+F 4 "DNP" H 3850 3250 50  0001 C CNN "DNP"
+	1    3850 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2650 6350 2650
+Text Label 6350 2650 0    50   ~ 0
+BAT-
+Wire Wire Line
+	4050 3250 4100 3250
 $EndSCHEMATC
