@@ -242,10 +242,10 @@ Text Label 1750 1700 2    50   ~ 0
 VBat
 Wire Wire Line
 	1750 1700 1350 1700
-Text Label 3650 2200 0    50   ~ 0
+Text Label 5100 2100 2    50   ~ 0
 ~INT
 Wire Wire Line
-	3650 2200 3950 2200
+	5100 2100 4800 2100
 Wire Wire Line
 	3950 2400 3750 2400
 Wire Wire Line
@@ -532,7 +532,7 @@ P 4400 1450
 F 0 "U5" H 4375 1465 50  0000 C CNN
 F 1 "PCA9557PW" H 4375 1374 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 4400 1450 50  0001 C CNN
-F 3 "" H 4400 1450 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/pca9557.pdf?ts=1627895395764" H 4400 1450 50  0001 C CNN
 F 4 "C141380" H 4400 1450 50  0001 C CNN "LCSC"
 	1    4400 1450
 	1    0    0    -1  
@@ -604,4 +604,7 @@ Wire Wire Line
 	4800 2000 5150 2000
 Wire Wire Line
 	5150 2000 5150 2600
+NoConn ~ 3950 2200
+NoConn ~ 4800 2200
+NoConn ~ 4800 2300
 $EndSCHEMATC
