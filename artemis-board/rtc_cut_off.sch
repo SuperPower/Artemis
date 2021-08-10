@@ -86,31 +86,6 @@ Wire Wire Line
 NoConn ~ 5600 4850
 Text HLabel 1350 1200 0    50   Input ~ 0
 3v3_I2C
-$Comp
-L power:GND #PWR0109
-U 1 1 5F81AC3F
-P 3050 2500
-F 0 "#PWR0109" H 3050 2250 50  0001 C CNN
-F 1 "GND" H 3055 2327 50  0000 C CNN
-F 2 "" H 3050 2500 50  0001 C CNN
-F 3 "" H 3050 2500 50  0001 C CNN
-	1    3050 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_FET:2N7002 Q1
-U 1 1 5F81E351
-P 3150 2050
-F 0 "Q1" H 3355 2096 50  0000 L CNN
-F 1 "2N7002" H 3355 2005 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3350 1975 50  0001 L CIN
-F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 3150 2050 50  0001 L CNN
-F 4 "C8545" H 3150 2050 50  0001 C CNN "LCSC"
-	1    3150 2050
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	3050 1800 3050 1850
 Text HLabel 1350 950  0    50   Input ~ 0
 SCL
 Text HLabel 1350 850  0    50   BiDi ~ 0
@@ -141,10 +116,8 @@ Text Label 4600 4950 0    50   ~ 0
 INT
 Wire Wire Line
 	4600 4950 4800 4950
-Text Label 2850 1800 0    50   ~ 0
+Text Label 3650 2200 0    50   ~ 0
 INT
-Wire Wire Line
-	2850 1800 3050 1800
 Wire Wire Line
 	1350 2000 1750 2000
 Wire Wire Line
@@ -199,8 +172,6 @@ Text Label 5100 1900 2    50   ~ 0
 ~CH_DIS
 Text Label 5100 1700 2    50   ~ 0
 3v3_I2C
-Wire Wire Line
-	3350 2050 3400 2050
 $Comp
 L Device:C C22
 U 1 1 5FC9C8EC
@@ -242,10 +213,6 @@ Text Label 1750 1700 2    50   ~ 0
 VBat
 Wire Wire Line
 	1750 1700 1350 1700
-Text Label 5100 2100 2    50   ~ 0
-~INT
-Wire Wire Line
-	5100 2100 4800 2100
 Wire Wire Line
 	3950 2400 3750 2400
 Wire Wire Line
@@ -263,8 +230,6 @@ F 3 "" H 3750 2450 50  0001 C CNN
 $EndComp
 Wire Notes Line
 	6650 1350 6650 4000
-Text Label 3400 2050 0    50   ~ 0
-~INT
 $Comp
 L power:GND #PWR0115
 U 1 1 60A20A9C
@@ -308,32 +273,6 @@ Wire Wire Line
 	1350 2250 1750 2250
 Text Label 1750 2250 2    50   ~ 0
 Vm
-Wire Wire Line
-	3400 2100 3400 2050
-Wire Wire Line
-	3400 2400 3400 2450
-$Comp
-L Device:R R?
-U 1 1 60A05ACF
-P 3400 2250
-AR Path="/5F639F48/60A05ACF" Ref="R?"  Part="1" 
-AR Path="/5F63A0E9/60A05ACF" Ref="R?"  Part="1" 
-AR Path="/5F63A00B/60A05ACF" Ref="R8"  Part="1" 
-F 0 "R8" H 3200 2200 50  0000 L CNN
-F 1 "1M" H 3250 2300 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3330 2250 50  0001 C CNN
-F 3 "~" H 3400 2250 50  0001 C CNN
-F 4 "C22935" H 3400 2250 50  0001 C CNN "LCSC"
-	1    3400 2250
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3050 2250 3050 2450
-Wire Wire Line
-	3050 2450 3050 2500
-Connection ~ 3050 2450
-Wire Wire Line
-	3050 2450 3400 2450
 Wire Wire Line
 	3400 3250 3400 3200
 Wire Wire Line
@@ -531,7 +470,7 @@ U 1 1 60F0D833
 P 4400 1450
 F 0 "U5" H 4375 1465 50  0000 C CNN
 F 1 "PCA9557PW" H 4375 1374 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 4400 1450 50  0001 C CNN
+F 2 "Package_SO:SOP-16_3.9x9.9mm_P1.27mm" H 4400 1450 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/pca9557.pdf?ts=1627895395764" H 4400 1450 50  0001 C CNN
 F 4 "C141380" H 4400 1450 50  0001 C CNN "LCSC"
 	1    4400 1450
@@ -604,7 +543,9 @@ Wire Wire Line
 	4800 2000 5150 2000
 Wire Wire Line
 	5150 2000 5150 2600
-NoConn ~ 3950 2200
 NoConn ~ 4800 2200
 NoConn ~ 4800 2300
+Wire Wire Line
+	3950 2200 3650 2200
+NoConn ~ 4800 2100
 $EndSCHEMATC
