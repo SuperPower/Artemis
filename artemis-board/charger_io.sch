@@ -102,16 +102,8 @@ Text Label 3900 3200 2    50   ~ 0
 D+
 Text Label 3900 3300 2    50   ~ 0
 D-
-Wire Notes Line
-	2300 2200 6050 2200
-Wire Notes Line
-	6050 2200 6050 4850
-Wire Notes Line
-	6050 4850 2300 4850
-Wire Notes Line
-	2300 4850 2300 2200
-Text Notes 2350 2350 0    50   ~ 0
-USB C Input\n
+Text Notes 2350 2000 0    50   ~ 0
+power inputs\n
 Text HLabel 1150 950  0    50   Output ~ 0
 VCHARGE
 Text HLabel 1150 1250 0    50   Input ~ 0
@@ -136,10 +128,8 @@ Text Label 1500 1250 2    50   ~ 0
 D+
 Text Label 1500 1500 2    50   ~ 0
 VBUS
-Text Label 5350 2700 2    50   ~ 0
+Text Label 6850 2700 2    50   ~ 0
 VCHARGE
-Wire Wire Line
-	4900 2700 5350 2700
 Wire Notes Line
 	550  550  1900 550 
 Wire Notes Line
@@ -228,4 +218,75 @@ NoConn ~ 4400 4650
 NoConn ~ 3550 4650
 Text Notes 4450 4750 0    50   ~ 0
 Optional USB ESD protection IC
+$Comp
+L Transistor_FET:AO3401A Q?
+U 1 1 61186A66
+P 6050 2800
+AR Path="/5F63A0E9/61186A66" Ref="Q?"  Part="1" 
+AR Path="/5F63B107/61186A66" Ref="Q4"  Part="1" 
+F 0 "Q4" V 6250 2600 50  0000 L CNN
+F 1 "AO3401A" V 6255 2755 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6250 2725 50  0001 L CIN
+F 3 "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf" H 6050 2800 50  0001 L CNN
+F 4 "C15127" H 6050 2800 50  0001 C CNN "LCSC"
+	1    6050 2800
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	2300 1850 2300 4850
+Wire Notes Line
+	2300 1850 7150 1850
+Wire Notes Line
+	7150 1850 7150 4850
+Wire Notes Line
+	2300 4850 7150 4850
+Wire Wire Line
+	4900 2700 5850 2700
+Wire Wire Line
+	6250 2700 6400 2700
+Wire Wire Line
+	6050 3000 6050 3050
+$Comp
+L power:GND #PWR?
+U 1 1 6118D6BE
+P 6050 3350
+F 0 "#PWR?" H 6050 3100 50  0001 C CNN
+F 1 "GND" H 6055 3177 50  0000 C CNN
+F 2 "" H 6050 3350 50  0001 C CNN
+F 3 "" H 6050 3350 50  0001 C CNN
+	1    6050 3350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:D_Zener D1
+U 1 1 61192259
+P 6400 2850
+F 0 "D1" V 6354 2930 50  0000 L CNN
+F 1 "ZMM5V6" V 6445 2930 50  0000 L CNN
+F 2 "Diode_SMD:D_MiniMELF" H 6400 2850 50  0001 C CNN
+F 3 "~" H 6400 2850 50  0001 C CNN
+F 4 "C8062" V 6400 2850 50  0001 C CNN "LCSC"
+	1    6400 2850
+	0    1    1    0   
+$EndComp
+Connection ~ 6400 2700
+Wire Wire Line
+	6400 2700 6850 2700
+Wire Wire Line
+	6400 3000 6050 3000
+Connection ~ 6050 3000
+$Comp
+L Device:R R?
+U 1 1 6119B3B3
+P 6050 3200
+AR Path="/5F63A00B/6119B3B3" Ref="R?"  Part="1" 
+AR Path="/5F63B107/6119B3B3" Ref="R5"  Part="1" 
+F 0 "R5" H 6150 3100 50  0000 C CNN
+F 1 "180k" H 6200 3200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5980 3200 50  0001 C CNN
+F 3 "~" H 6050 3200 50  0001 C CNN
+F 4 "C22827" H 6050 3200 50  0001 C CNN "LCSC"
+	1    6050 3200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
