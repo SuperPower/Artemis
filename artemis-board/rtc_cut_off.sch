@@ -164,11 +164,11 @@ Wire Notes Line
 	550  600  1850 600 
 Wire Notes Line
 	1850 2450 550  2450
-Text Label 3650 2300 0    50   ~ 0
-3v3_EN
 Text Label 5100 2400 2    50   ~ 0
+3v3_EN
+Text Label 3650 2300 0    50   ~ 0
 5V_EN
-Text Label 5100 1900 2    50   ~ 0
+Text Label 5100 2000 2    50   ~ 0
 ~CH_DIS
 Text Label 5100 1700 2    50   ~ 0
 3v3_I2C
@@ -202,11 +202,11 @@ Wire Notes Line
 Text Label 6450 4750 2    50   ~ 0
 3v3_I2C
 Wire Wire Line
-	3950 2300 3650 2300
-Wire Wire Line
 	4800 2400 5100 2400
 Wire Wire Line
-	5100 1900 4800 1900
+	3950 2300 3650 2300
+Wire Wire Line
+	5100 2000 4800 2000
 Text HLabel 1350 1700 0    50   Input ~ 0
 VBat
 Text Label 1750 1700 2    50   ~ 0
@@ -470,7 +470,7 @@ U 1 1 60F0D833
 P 4400 1450
 F 0 "U5" H 4375 1465 50  0000 C CNN
 F 1 "PCA9557PW" H 4375 1374 50  0000 C CNN
-F 2 "Package_SO:SOP-16_3.9x9.9mm_P1.27mm" H 4400 1450 50  0001 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 4400 1450 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/pca9557.pdf?ts=1627895395764" H 4400 1450 50  0001 C CNN
 F 4 "C141380" H 4400 1450 50  0001 C CNN "LCSC"
 	1    4400 1450
@@ -509,8 +509,6 @@ Wire Notes Line
 	4600 3900 4600 2650
 Wire Wire Line
 	4900 3250 4900 2600
-Wire Wire Line
-	4900 2600 5150 2600
 Connection ~ 4900 3250
 Wire Wire Line
 	3950 2100 3900 2100
@@ -539,13 +537,15 @@ $EndComp
 Wire Wire Line
 	3750 1900 3900 1900
 Connection ~ 3900 1900
-Wire Wire Line
-	4800 2000 5150 2000
-Wire Wire Line
-	5150 2000 5150 2600
 NoConn ~ 4800 2200
-NoConn ~ 4800 2300
 Wire Wire Line
 	3950 2200 3650 2200
 NoConn ~ 4800 2100
+Wire Wire Line
+	4900 2600 5150 2600
+Wire Wire Line
+	5150 1900 5150 2600
+Wire Wire Line
+	4800 1900 5150 1900
+NoConn ~ 4800 2300
 $EndSCHEMATC
