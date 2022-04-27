@@ -22,4 +22,5 @@
   (lib (name TPS61032PWPR)(type Legacy)(uri ${KIPRJMOD}/../components/TPS61032PWPR/TPS61032PWPR.lib)(options "")(descr ""))
   (lib (name XC6206P332MR)(type Legacy)(uri ${KIPRJMOD}/../components/XC6206P332MR/XC6206P332MR.lib)(options "")(descr ""))
   (lib (name solderjumper_4_open)(type Legacy)(uri ${KIPRJMOD}/../components/solderjumper_4_open/solderjumper_4_open.lib)(options "")(descr ""))
+  (lib (name MAX17048)(type Legacy)(uri ${KIPRJMOD}/../components/MAX17048/MAX17048.lib)(options "")(descr ""))
 )
