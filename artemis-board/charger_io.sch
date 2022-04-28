@@ -36,10 +36,11 @@ L Connector:Conn_01x02_Male J4
 U 1 1 5F7CE401
 P 5600 3100
 F 0 "J4" H 5750 2800 50  0000 C CNN
-F 1 "Solar in" H 5700 2900 50  0000 C CNN
+F 1 "DC in" H 5700 2900 50  0000 C CNN
 F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" H 5600 3100 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1811051822_JST-Sales-America-S2B-XH-A-LF-SN_C157931.pdf" H 5600 3100 50  0001 C CNN
 F 4 "C225424" H 5600 3100 50  0001 C CNN "LCSC"
+F 5 "Extended" H 5600 3100 50  0001 C CNN "Extended"
 	1    5600 3100
 	-1   0    0    1   
 $EndComp
@@ -172,6 +173,7 @@ F 1 "USB_B_Micro" H 3357 3576 50  0000 C CNN
 F 2 "Connector_USB:USB_Micro-B_Molex-105017-0001" H 3357 3575 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1912111437_SHOU-HAN-MicroXNJ_C404969.pdf" H 3450 3150 50  0001 C CNN
 F 4 "C404969" H 3300 3200 50  0001 C CNN "LCSC"
+F 5 "Extended" H 3300 3200 50  0001 C CNN "Extended"
 	1    3300 3200
 	1    0    0    -1  
 $EndComp

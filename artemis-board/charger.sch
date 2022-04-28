@@ -396,6 +396,7 @@ F 1 "SKRKAEE020" H 3200 4644 50  0000 C CNN
 F 2 "Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK" H 3200 4500 50  0001 C CNN
 F 3 "~" H 3200 4500 50  0001 C CNN
 F 4 "C115357" H 3200 4500 50  0001 C CNN "LCSC"
+F 5 "Extended" H 3200 4500 50  0001 C CNN "Extended"
 	1    3200 4500
 	1    0    0    -1  
 $EndComp
@@ -646,6 +647,8 @@ F 0 "U3" H 3700 2690 50  0000 C CNN
 F 1 "MAX17048" H 3700 2599 50  0000 C CNN
 F 2 "Package_DFN_QFN:TDFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.2mm" H 3700 2625 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/MAX17048-MAX17049.pdf" H 3700 2625 50  0001 C CNN
+F 4 "C2682616" H 3700 2625 50  0001 C CNN "LCSC"
+F 5 "Extended" H 3700 2625 50  0001 C CNN "Extended"
 	1    3700 2625
 	1    0    0    -1  
 $EndComp
@@ -678,42 +681,42 @@ Connection ~ 2950 2800
 $Comp
 L Connector:Conn_01x04_Female J2
 U 1 1 626A92A8
-P 3575 1250
-F 0 "J2" H 3467 825 50  0000 C CNN
-F 1 "I2c" H 3467 916 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 3575 1250 50  0001 C CNN
-F 3 "~" H 3575 1250 50  0001 C CNN
-	1    3575 1250
+P 8275 4875
+F 0 "J2" H 8167 4450 50  0000 C CNN
+F 1 "I2c" H 8167 4541 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 8275 4875 50  0001 C CNN
+F 3 "~" H 8275 4875 50  0001 C CNN
+	1    8275 4875
 	-1   0    0    1   
 $EndComp
-Text Notes 3425 750  0    50   ~ 0
+Text Notes 8000 4250 0    50   ~ 0
 I2c connector
-Text Label 3925 1350 0    50   ~ 0
+Text Label 8625 4975 0    50   ~ 0
 3v3_I2C
 Wire Wire Line
-	3925 1050 3775 1050
+	8625 4675 8475 4675
 Wire Wire Line
-	3775 1150 3925 1150
+	8475 4775 8625 4775
 Wire Wire Line
-	3925 1350 3775 1350
+	8625 4975 8475 4975
 $Comp
 L power:GND #PWR0104
 U 1 1 626C8CC2
-P 4375 1375
-F 0 "#PWR0104" H 4375 1125 50  0001 C CNN
-F 1 "GND" H 4380 1202 50  0000 C CNN
-F 2 "" H 4375 1375 50  0001 C CNN
-F 3 "" H 4375 1375 50  0001 C CNN
-	1    4375 1375
+P 9075 5000
+F 0 "#PWR0104" H 9075 4750 50  0001 C CNN
+F 1 "GND" H 9080 4827 50  0000 C CNN
+F 2 "" H 9075 5000 50  0001 C CNN
+F 3 "" H 9075 5000 50  0001 C CNN
+	1    9075 5000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4375 1375 4375 1250
+	9075 5000 9075 4875
 Wire Wire Line
-	3775 1250 4375 1250
-Text Label 3925 1150 0    50   ~ 0
+	8475 4875 9075 4875
+Text Label 8625 4775 0    50   ~ 0
 SCL
-Text Label 3925 1050 0    50   ~ 0
+Text Label 8625 4675 0    50   ~ 0
 SDA
 $Comp
 L Sensor_Temperature:LM75B U13
@@ -723,6 +726,8 @@ F 0 "U13" H 8600 3650 50  0000 C CNN
 F 1 "TMP75" H 8700 3525 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8900 3025 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/tmp75.pdf?ts=1651133798056&ref_url=https%253A%252F%252Fwww.google.com%252F" H 8900 3025 50  0001 C CNN
+F 4 "C30389" H 8900 3025 50  0001 C CNN "LCSC"
+F 5 "Extended" H 8900 3025 50  0001 C CNN "Extended"
 	1    8900 3025
 	1    0    0    -1  
 $EndComp
@@ -730,7 +735,7 @@ Wire Notes Line
 	4575 2050 2500 2050
 Wire Notes Line
 	4575 3950 2500 3950
-Text Notes 7975 2200 0    50   ~ 0
+Text Notes 8025 2200 0    50   ~ 0
 Temperature sensor
 Wire Notes Line
 	7975 2050 7975 3950
@@ -738,8 +743,6 @@ Wire Notes Line
 	7975 3950 10175 3950
 Wire Notes Line
 	10175 3950 10175 2050
-Wire Notes Line
-	7975 2025 10175 2050
 Text Label 8900 2450 0    50   ~ 0
 3v3_I2C
 Wire Wire Line
@@ -818,4 +821,18 @@ $EndComp
 Wire Wire Line
 	9425 3175 9425 3125
 Connection ~ 9425 3125
+Wire Notes Line
+	7975 2050 10175 2050
+Wire Notes Line
+	7925 4100 10025 4100
+Wire Notes Line
+	10025 4100 10025 6000
+Wire Notes Line
+	10025 6000 7925 6000
+Wire Notes Line
+	7925 6000 7925 4100
+Text Notes 7975 5675 0    50   ~ 0
+Vcc always on therefore make sure device has a\nsleep mode with sufficiently low current draw.
+Text Notes 7975 5925 0    50   ~ 0
+If using switched Vcc (3v3/3v3_MCU) \ndo not use external pullups.
 $EndSCHEMATC

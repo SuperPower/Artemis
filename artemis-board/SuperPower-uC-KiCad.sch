@@ -57,9 +57,9 @@ Text Notes 1400 2300 0    50   ~ 0
 Battery Holder
 Text Notes 1400 2450 0    50   ~ 0
 Battery Protection
-Text Notes 3400 2300 0    50   ~ 0
+Text Notes 3325 2300 0    50   ~ 0
 Charger
-Text Notes 3400 2400 0    50   ~ 0
+Text Notes 3325 2400 0    50   ~ 0
 Fuel Gauge
 Text Notes 5150 2300 0    50   ~ 0
 3v3_LDO
@@ -72,18 +72,16 @@ RTC
 Text Notes 3400 4350 0    50   ~ 0
 USB-microB
 Text Notes 3400 4450 0    50   ~ 0
-Solar input
+DC input
 Text Notes 3400 4550 0    50   ~ 0
 Solder Pads
-Text Notes 3400 2800 0    50   ~ 0
+Text Notes 3325 2800 0    50   ~ 0
 Manual Wake
-Text Notes 3400 2700 0    50   ~ 0
-Bypass Jumper
-Text Notes 3400 2500 0    50   ~ 0
+Text Notes 3325 2500 0    50   ~ 0
 Power on INT
 Text Notes 5250 4250 0    50   ~ 0
 IO Expander
-Text Notes 3400 2600 0    50   ~ 0
+Text Notes 3325 2600 0    50   ~ 0
 I2C pullup
 Wire Wire Line
 	6150 4600 6650 4600
@@ -229,7 +227,8 @@ F 0 "J8" H 9550 3500 50  0000 L CNN
 F 1 "regulator board" H 9550 3400 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x13_P2.54mm_Vertical" H 9500 3450 50  0001 C CNN
 F 3 "~" H 9500 3450 50  0001 C CNN
-F 4 "C52709 " H 9500 3450 50  0001 C CNN "LCSC"
+F 4 "C52709" H 9500 3450 50  0001 C CNN "LCSC"
+F 5 "Extended" H 9500 3450 50  0001 C CNN "Extended"
 	1    9500 3450
 	1    0    0    -1  
 $EndComp
@@ -320,4 +319,6 @@ NoConn ~ 9300 3450
 NoConn ~ 9300 3650
 Text Notes 8725 1675 0    50   ~ 0
 I2C adresses:\nExpander: 0x21\nRTC: 0x51\nFuel gauge: 0x36\nTemperature sensor: 0x48
+Text Notes 3325 2700 0    50   ~ 0
+Temperature sensor
 $EndSCHEMATC

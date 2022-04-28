@@ -93,6 +93,7 @@ F 1 "TCA6408A" H 4350 2050 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 4500 2300 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/tca6408a.pdf?ts=1602171918658&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTCA6408A" H 4700 2050 50  0001 C CNN
 F 4 "C206177" H 4700 2450 50  0001 C CNN "LCSC"
+F 5 "Extended" H 4450 1800 50  0001 C CNN "Extended"
 	1    4450 1800
 	1    0    0    -1  
 $EndComp

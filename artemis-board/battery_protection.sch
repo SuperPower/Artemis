@@ -22,6 +22,7 @@ F 1 "FS312F-G" H 5350 2976 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5450 3800 50  0001 C CNN
 F 3 "https://www.ic-fortune.com/upload/Download/FS312F-G-DS-12_EN.pdf" H 5350 3100 50  0001 C CNN
 F 4 "C82736" H 5350 3350 50  0001 C CNN "LCSC"
+F 5 "Extended" H 5350 3350 50  0001 C CNN "Extended"
 	1    5350 3350
 	-1   0    0    1   
 $EndComp
@@ -34,6 +35,7 @@ F 1 "FS8205A" H 5400 3676 50  0000 C CNN
 F 2 "Package_SO:TSSOP-8_4.4x3mm_P0.65mm" H 5400 4300 50  0001 C CNN
 F 3 "https://www.ic-fortune.com/upload/Download/FS8205A-DS-12_EN.pdf" H 5400 4300 50  0001 C CNN
 F 4 "C16052" H 5400 4000 50  0001 C CNN "LCSC"
+F 5 "Extended" H 5400 4000 50  0001 C CNN "Extended"
 	1    5400 4000
 	-1   0    0    1   
 $EndComp
@@ -124,6 +126,7 @@ F 1 "Battery connector" H 6900 3300 50  0000 C CNN
 F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 6800 3150 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1810261120_JST-Sales-America-S2B-PH-K-S-GW_C157932.pdf" H 6800 3150 50  0001 C CNN
 F 4 "C157932" H 6800 3150 50  0001 C CNN "LCSC"
+F 5 "Extended" H 6800 3150 50  0001 C CNN "Extended"
 	1    6800 3150
 	1    0    0    -1  
 $EndComp

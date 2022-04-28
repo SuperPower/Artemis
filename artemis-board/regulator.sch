@@ -523,6 +523,7 @@ F 1 "6.8µH" V 3950 4800 50  0000 L CNN
 F 2 "Inductor_SMD:L_Bourns_SRP7028A_7.3x6.6mm" H 3850 4900 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1811091611_Sunltech-Tech-SLO0630H6R8MTT_C207841.pdf" H 3850 4900 50  0001 C CNN
 F 4 "C207841" H 3850 4900 50  0001 C CNN "LCSC"
+F 5 "Extended" H 3850 4900 50  0001 C CNN "Extended"
 	1    3850 4900
 	0    -1   -1   0   
 $EndComp
@@ -535,6 +536,7 @@ F 1 "FP6291LR" H 3950 5500 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3850 5600 50  0001 C CNN
 F 3 "www.feeling-tech.com.tw/km-master/ezcatfiles/cust/img/img/24/fp6291v064.pdf" H 3850 5400 50  0001 C CNN
 F 4 "C18701" H 3850 5700 50  0001 C CNN "LCSC"
+F 5 "Extended" H 3850 5250 50  0001 C CNN "Extended"
 	1    3850 5250
 	-1   0    0    -1  
 $EndComp
@@ -635,6 +637,7 @@ F 1 "ME6210A33P" H 3600 3174 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-89-3" H 3600 3450 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1810201611_MICRONE-Nanjing-Micro-One-Elec-ME6210A33PG_C85233.pdf" H 3600 3450 50  0001 C CNN
 F 4 "C85233" H 3600 3550 50  0001 C CNN "LCSC"
+F 5 "Extended" H 3600 3000 50  0001 C CNN "Extended"
 	1    3600 3000
 	1    0    0    -1  
 $EndComp
@@ -755,6 +758,7 @@ F 1 "ME6210A33P" H 8000 3224 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-89-3" H 8000 3500 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1810201611_MICRONE-Nanjing-Micro-One-Elec-ME6210A33PG_C85233.pdf" H 8000 3500 50  0001 C CNN
 F 4 "C85233" H 8000 3600 50  0001 C CNN "LCSC"
+F 5 "Extended" H 8000 3050 50  0001 C CNN "Extended"
 	1    8000 3050
 	1    0    0    -1  
 $EndComp
