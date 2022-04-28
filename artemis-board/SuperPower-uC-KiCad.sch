@@ -86,15 +86,11 @@ IO Expander
 Text Notes 3400 2600 0    50   ~ 0
 I2C pullup
 Wire Wire Line
-	6650 4600 6650 3850
-Wire Wire Line
 	6150 4600 6650 4600
 Wire Wire Line
 	6150 2750 6650 2750
 Wire Wire Line
 	6150 2900 6600 2900
-Wire Wire Line
-	6600 2900 6600 3450
 Wire Wire Line
 	6600 4500 6150 4500
 Wire Wire Line
@@ -114,7 +110,6 @@ F6 "CHARGE-DISABLE" I L 4900 4450 50
 F7 "3v3V_EN" O R 6150 4600 50 
 F8 "3v3_I2C" I L 4900 4350 50 
 F9 "VBat" I L 4900 4150 50 
-F10 "Vmeasure" O R 6150 4750 50 
 $EndSheet
 $Sheet
 S 2850 4000 1250 1150
@@ -316,55 +311,13 @@ Wire Wire Line
 Connection ~ 4800 2200
 Wire Wire Line
 	4800 2200 4900 2200
-Wire Wire Line
-	6150 4750 8200 4750
 NoConn ~ 9300 4050
-$Comp
-L Device:Jumper_NO_Small JP4
-U 1 1 60D487D3
-P 8000 3450
-F 0 "JP4" H 8000 3635 50  0000 C CNN
-F 1 "Jumper 5v enable" H 8000 3544 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 8000 3450 50  0001 C CNN
-F 3 "~" H 8000 3450 50  0001 C CNN
-F 4 "DNP" H 8000 3450 50  0001 C CNN "DNP"
-	1    8000 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_3_Open JP?
-U 1 1 60D4D872
-P 8000 3850
-AR Path="/5F63B107/60D4D872" Ref="JP?"  Part="1" 
-AR Path="/60D4D872" Ref="JP3"  Part="1" 
-F 0 "JP3" H 7850 3800 50  0000 C CNN
-F 1 "jumper" H 8050 3950 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 8000 3850 50  0001 C CNN
-F 3 "~" H 8000 3850 50  0001 C CNN
-F 4 "DNP" H 8000 3850 50  0001 C CNN "DNP"
-	1    8000 3850
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
-	8200 3850 8200 4750
+	6650 2750 6650 4600
 Wire Wire Line
-	8000 3650 8000 3700
-Wire Wire Line
-	8000 3650 9300 3650
-Wire Wire Line
-	9300 3450 8100 3450
-Wire Wire Line
-	7900 3450 6600 3450
-Connection ~ 6600 3450
-Wire Wire Line
-	6600 3450 6600 4500
-Wire Wire Line
-	7800 3850 6650 3850
-Connection ~ 6650 3850
-Wire Wire Line
-	6650 3850 6650 2750
-Text Notes 6700 3150 0    50   ~ 0
-use JP4 only if IO expander is not populated
-Text Notes 6950 4950 0    50   ~ 0
-JP3 position 1 for voltage measuring (requires io expander)\nposition 3 only if IO expander is not populated
+	6600 2900 6600 4500
+NoConn ~ 9300 3450
+NoConn ~ 9300 3650
+Text Notes 8725 1675 0    50   ~ 0
+I2C adresses:\nExpander: 0x21\nRTC: 0x51\nFuel gauge: 0x36\nTemperature sensor: 0x48
 $EndSCHEMATC
